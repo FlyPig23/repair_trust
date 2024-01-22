@@ -1,0 +1,24 @@
+.gpt-response {
+    display: flex; /* Use flexbox for alignment */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    padding: 20px;
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    font-size: 18px;
+    line-height: 1.6;
+    min-height: 300px; /* Increased minimum height */
+    width: 80%; /* Increased width */
+    max-width: 800px; /* Maximum width */
+    margin: 0 auto; /* Center the box */
+}
+
+.gpt-response textarea {
+    width: 100%; /* Full width within the container */
+    height: 250px; /* Adjusted height */
+    font-size: 18px; /* Font size for the text inside the textarea */
+    line-height: 1.6;
+    border: 1px solid #ccc;
+    padding: 10px; /* Padding inside the textarea */
+    resize: none; /* Disable resizing */
+}

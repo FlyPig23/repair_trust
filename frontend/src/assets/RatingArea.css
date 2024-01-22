@@ -1,0 +1,51 @@
+.rating-area {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Increased gap between questions */
+    padding: 20px;
+}
+
+.rating-question {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Increased gap between label and images */
+    font-size: 16px;
+}
+
+.rating-faces {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px; /* Added margin at the top */
+}
+
+.face-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100px; /* Fixed width for each face container */
+}
+
+.rating-face {
+    cursor: pointer;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+    filter: grayscale(100%); /* Make the image black and white */
+}
+
+.rating-face:hover,
+.rating-face.selected {
+    filter: grayscale(0); /* Revert to original color on hover and when selected */
+}
+
+.rating-face:hover {
+    transform: scale(1.2);
+}
+
+.face-label {
+    margin-top: 5px;
+    font-size: 12px;
+    text-align: center; /* Center-align the label text */
+    white-space: nowrap; /* Prevent label text from wrapping */
+}

@@ -1,0 +1,41 @@
+.action-buttons-container {
+    display: flex;
+    flex-direction: column; /* Keep the column layout */
+    justify-content: space-between; /* Space items vertically */
+    height: 100%; /* Full height of parent */
+    width: 100%; /* Full width of parent */
+}
+
+.action-buttons {
+    display: flex;
+    gap: 10px; /* Adjust gap between buttons as needed */
+}
+
+.action-buttons button, .next-button {
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px; /* Rounded corners */
+    background-color: #007AFF; /* iOS blue color */
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background-color 0.3s ease; /* Smooth background transition */
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+
+.action-buttons button:hover, .next-button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+.next-button-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-end; /* Align the Next button to the right */
+    width: 100%; /* Full width to allow alignment */
+}
+
+.next-button {
+    /* Styles for the Next button */
+}

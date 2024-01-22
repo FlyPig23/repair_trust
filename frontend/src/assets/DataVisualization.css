@@ -1,0 +1,10 @@
+h2 {
+    margin-top: 0; /* Remove default top margin */
+    margin-bottom: 20px; /* Add space between components */
+}
+
+.data-visualization {
+    flex-grow: 0; /* Disable growth to take up available space */
+    margin: 0 auto; /* Center the component in its container */
+    margin-bottom: 20px; /* Add space between components */
+}

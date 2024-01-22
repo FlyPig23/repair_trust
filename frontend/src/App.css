@@ -1,0 +1,61 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.app-container {
+  display: flex; /* Use flexbox for layout */
+  height: 100vh; /* Full height of the viewport */
+  font-family: Arial, sans-serif; /* Set a default font */
+}
+
+.left-panel {
+  flex: 3; /* Take up 3/5 of the space */
+  display: flex;
+  flex-direction: column; /* Stack children vertically */
+  padding: 20px; /* Add some padding around the content */
+  border-right: 2px solid #ccc; /* A line to separate the left and right panels */
+}
+
+.right-panel {
+  flex: 2; /* Take up 2/5 of the space */
+  display: flex;
+  flex-direction: column; /* Stack children vertically */
+  justify-content: center; /* Center content vertically */
+  align-items: center; /* Center content horizontally */
+  padding: 20px; /* Add some padding around the content */
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
