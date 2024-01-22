@@ -70,7 +70,7 @@ function App() {
                     trust: null,
                 });
                 setActionChoice(null);
-                setIsEditable(false); // Optional: Reset to non-editable if needed
+                setIsEditable(false); // Reset to non-editable
 
                 // Navigate to the next survey or show a completion message
                 // This part is handled in the handleNext function in ActionButtons.js

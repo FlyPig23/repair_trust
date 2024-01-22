@@ -14,8 +14,8 @@
 .action-buttons button, .next-button {
     border: none;
     padding: 10px 20px;
-    border-radius: 20px; /* Rounded corners */
-    background-color: #007AFF; /* iOS blue color */
+    border-radius: 20px;
+    background-color: #007AFF;
     color: white;
     text-align: center;
     text-decoration: none;
