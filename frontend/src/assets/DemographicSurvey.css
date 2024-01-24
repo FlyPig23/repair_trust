@@ -1,0 +1,54 @@
+.demographic-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.demographic-form {
+    width: 50%; /* Adjust width as needed */
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.demographic-form h1 {
+    margin-bottom: 20px;
+}
+
+.demographic-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.demographic-form form input,
+.demographic-form form select,
+.demographic-form form textarea {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.demographic-form form button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s; /* Smooth transition for color change */
+}
+
+.demographic-form form button:hover {
+    background-color: #0056b3;
+}
+
+.demographic-form form button:disabled {
+    background-color: #cccccc; /* Grey background for disabled state */
+    color: #666666; /* Darker text color for disabled state */
+    cursor: not-allowed; /* Change cursor for disabled state */
+    opacity: 0.7; /* Greyed out appearance */
+}

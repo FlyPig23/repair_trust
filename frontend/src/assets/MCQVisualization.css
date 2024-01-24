@@ -4,7 +4,7 @@ h2 {
     text-align: center; /* Center-align the title text */
 }
 
-.data-visualization {
+.mcq-visualization {
     display: flex; /* Use flexbox for layout */
     flex-direction: column; /* Arrange items vertically */
     align-items: center; /* Center the items horizontally */
@@ -18,7 +18,7 @@ h2 {
     width: 100%; /* Use full width of the container */
 }
 
-.data-visualization img {
+.mcq-visualization img {
     max-width: 100%; /* Ensure the image is responsive and doesn't overflow its container */
     height: auto; /* Maintain aspect ratio */
     border-radius: 5px; /* Round the corners of the image */

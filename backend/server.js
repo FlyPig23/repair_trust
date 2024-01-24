@@ -65,6 +65,43 @@ async function main() {
         }
     });
 
+    app.post('/submit-answer', async (req, res) => {
+        try {
+            const { userSessionId, questionNumber, choice, isCorrect } = req.body;
+            const usersDatabase = client.db(usersDbName);
+            const usersCollection = usersDatabase.collection("users");
+
+            // Add the answer to the user's document
+            const result = await usersCollection.updateOne(
+                { userSessionId },
+                { $push: { 'mcqAnswers': { questionNumber, choice, isCorrect } } }
+            );
+
+            res.status(200).json({ message: "MCQ answer saved successfully", result });
+        } catch (error) {
+            res.status(500).json({ message: "Error saving MCQ answer", error });
+            console.error(error);
+        }
+    });
+
+    app.post('/submit-demographic', async (req, res) => {
+        try {
+            const { userSessionId, demographicData } = req.body;
+            const usersDatabase = client.db(usersDbName);
+            const usersCollection = usersDatabase.collection("users");
+
+            // Update the user's document with the demographic data
+            const result = await usersCollection.updateOne(
+                { userSessionId },
+                { $set: { demographicData: demographicData } }
+            );
+
+            res.status(200).json({ message: "Demographic data saved successfully", result });
+        } catch (error) {
+            res.status(500).json({ message: "Error saving demographic data", error });
+            console.error(error);
+        }
+    });
 
     app.get('/random-image', async (req, res) => {
         try {

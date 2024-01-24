@@ -1,0 +1,140 @@
+[
+  {
+    "id": 1,
+    "image": "/multiple_choices_images/AreaChart.png",
+    "questionText": "What was the average price of pound of coffee beans in October 2019?",
+    "choices": [
+      "$0.71",
+      "$0.90",
+      "$0.80",
+      "$0.63"
+    ],
+    "correctAnswer": "$0.71"
+  },
+  {
+    "id": 2,
+    "image": "/multiple_choices_images/BarChart.png",
+    "questionText": "What is the average internet speed in Japan?",
+    "choices": [
+      "42.30 Mbps",
+      "40.51 Mbps",
+      "35.25 Mbps",
+      "16.16 Mbps"
+    ],
+    "correctAnswer": "40.51 Mbps"
+  },
+  {
+    "id": 3,
+    "image": "/multiple_choices_images/LineChart.png",
+    "questionText": "What was the price of a barrel of oil in February 2020?",
+    "choices": [
+      "$50.54",
+      "$47.02",
+      "$42.34",
+      "$28.67"
+    ],
+    "correctAnswer": "$50.54"
+  },
+  {
+    "id": 4,
+    "image": "/multiple_choices_images/BubbleChart.png",
+    "questionText": "Which city's metro system has the largest number of stations?",
+    "choices": [
+      "Beijing",
+      "Shanghai",
+      "London",
+      "Seoul"
+    ],
+    "correctAnswer": "Shanghai"
+  },
+  {
+    "id": 5,
+    "image": "/multiple_choices_images/Choropleth.png",
+    "questionText": "In 2020, the unemployment rate for Washington (WA) was higher than that of Wisconsin (WI).",
+    "choices": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": "True"
+  },
+  {
+    "id": 6,
+    "image": "/multiple_choices_images/Choropleth_New.png",
+    "questionText": "What is the main theme of this image?",
+    "choices": [
+      "Choice A",
+      "Choice B",
+      "Choice C",
+      "Choice D"
+    ],
+    "correctAnswer": "Choice B"
+  },
+  {
+    "id": 7,
+    "image": "/multiple_choices_images/Histogram.png",
+    "questionText": "What distance have customers traveled in the taxi the most?",
+    "choices": [
+      "20 - 30 KM",
+      "30 - 40 KM",
+      "50 - 60 KM",
+      "60 - 70 KM"
+    ],
+    "correctAnswer": "Choice C"
+  },
+  {
+    "id": 8,
+    "image": "/multiple_choices_images/StackedBar.png",
+    "questionText": "What is the cost of peanuts in Seoul?",
+    "choices": [
+      "$6.1",
+      "$5.2",
+      "$7.5",
+      "$4.5"
+    ],
+    "correctAnswer": "$6.1"
+  },
+  {
+    "id": 9,
+    "image": "/multiple_choices_images/PieChart.png",
+    "questionText": "What is the approximate global smartphone market share of Samsung?",
+    "choices": [
+      "17.6%",
+      "25.3%",
+      "10.9%",
+      "35.2%"
+    ],
+    "correctAnswer": "17.6%"
+  },
+  {
+    "id": 10,
+    "image": "/multiple_choices_images/Scatterplot.png",
+    "questionText": "There is a negative linear relationship between the height and the weight of the 85 males.",
+    "choices": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": "False"
+  },
+  {
+    "id": 11,
+    "image": "/multiple_choices_images/Stacked100.png",
+    "questionText": "Which country has the lowest proportion of Gold medals?",
+    "choices": [
+      "Great Britain",
+      "U.S.A",
+      "Japan",
+      "Australia"
+    ],
+    "correctAnswer": "Great Britain"
+  },
+  {
+    "id": 12,
+    "image": "/multiple_choices_images/TreeMap.png",
+    "questionText": "eBay is nested in the Software category.",
+    "choices": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": "False"
+  }
+]

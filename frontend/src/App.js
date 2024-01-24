@@ -11,6 +11,9 @@ import GptResponse from './components/GptResponse';
 import RatingArea from './components/RatingArea';
 import ActionButtons from './components/ActionButtons';
 import ConsentPage from './components/ConsentPage';
+import MultipleChoiceQuestions from './components/MultipleChoiceQuestions';
+import DemographicSurvey from './components/DemographicSurvey';
+import MCQVisualization from './components/MCQVisualization';
 
 function App() {
     const [userSessionId, setUserSessionId] = useState(null);
@@ -47,7 +50,6 @@ function App() {
             gptResponse,
             ratings,
             actionChoice,
-            // TODO: Include other data as needed
         };
 
         try {
@@ -61,19 +63,10 @@ function App() {
 
             if (response.ok) {
                 console.log('Survey data submitted successfully');
-
-                // Reset states after successful submission
                 setGptResponse('');
-                setRatings({
-                    quality: null,
-                    factual: null,
-                    trust: null,
-                });
+                setRatings({ quality: null, factual: null, trust: null });
                 setActionChoice(null);
-                setIsEditable(false); // Reset to non-editable
-
-                // Navigate to the next survey or show a completion message
-                // This part is handled in the handleNext function in ActionButtons.js
+                setIsEditable(false);
             } else {
                 throw new Error('Failed to submit survey data');
             }
@@ -85,7 +78,7 @@ function App() {
     return (
         <Router>
             <Routes>
-                <Route path="/" element={<ConsentPage setUserSessionId={setUserSessionId} />} /> {/* Consent page as the default route */}
+                <Route path="/" element={<ConsentPage setUserSessionId={setUserSessionId} />} />
                 {[...Array(15)].map((_, index) => (
                     <Route
                         key={index}
@@ -119,12 +112,35 @@ function App() {
                                             setActionChoice('Write My Own');
                                         }}
                                         handleSubmitSurvey={() => handleSubmitSurvey(index + 1)}
+                                        ratings={ratings}
+                                        actionChoice={actionChoice}
+                                    />
+
+                                </div>
+                            </div>
+                        }
+                    />
+                ))}
+                {[...Array(12)].map((_, index) => (
+                    <Route
+                        key={index}
+                        path={`/mcq/${index + 1}`}
+                        element={
+                            <div className="app-container">
+                                <div className="left-panel">
+                                    <MCQVisualization iteration={index + 1}/>
+                                </div>
+                                <div className="right-panel">
+                                    <MultipleChoiceQuestions
+                                        questionNumber={index + 1}
+                                        userSessionId={userSessionId}
                                     />
                                 </div>
                             </div>
                         }
                     />
                 ))}
+                <Route path="/demographic-survey" element={<DemographicSurvey userSessionId={userSessionId} />} />
             </Routes>
         </Router>
     );
