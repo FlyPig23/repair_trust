@@ -14,8 +14,8 @@ h2 {
     background-color: #f9f9f9; /* Add background color */
     border-radius: 5px; /* Round the corners */
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
-    max-width: 700px; /* Limit the maximum width */
-    width: 100%; /* Use full width of the container */
+    max-width: 800px; /* Limit the maximum width */
+    width: 90%; /* Use full width of the container */
 }
 
 .mcq-visualization img {

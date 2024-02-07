@@ -1,0 +1,49 @@
+.mcq-instruction-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+.mcq-instruction-container h1 {
+    margin-bottom: 20px;
+    text-align: center;
+    color: #007bff;
+}
+
+.mcq-instruction-container p {
+    font-size: 18px;
+    line-height: 1.6;
+    text-align: justify;
+    margin-bottom: 30px;
+    max-width: 700px;
+    width: 100%;
+}
+
+.mcq-instruction-container ul {
+    list-style: inside;
+    margin: 0;
+    padding: 0;
+}
+
+.mcq-instruction-container li {
+    margin-bottom: 10px;
+}
+
+.mcq-instruction-container button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.mcq-instruction-container button:hover {
+    background-color: #0056b3;
+}

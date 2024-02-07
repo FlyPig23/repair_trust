@@ -19,7 +19,7 @@ function ConsentPage({ setUserSessionId }) {
             if (response.ok) {
                 const result = await response.json();
                 setUserSessionId(result.userSessionId); // Set the user session ID in the App component
-                navigate('/survey/1'); // Navigate to the first survey page
+                navigate('/survey-instruction'); // Navigate to the survey instruction page
             } else {
                 throw new Error('Failed to submit consent agreement');
             }

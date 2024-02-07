@@ -59,15 +59,15 @@
   },
   {
     "id": 6,
-    "image": "/multiple_choices_images/Choropleth_New.png",
-    "questionText": "What is the main theme of this image?",
+    "image": "/multiple_choices_images/StackedArea.png",
+    "questionText": "What was the ratio of girls named 'Isla' to girls named 'Amelia' in 2012 in the UK?",
     "choices": [
-      "Choice A",
-      "Choice B",
-      "Choice C",
-      "Choice D"
+      "1 to 1",
+      "1 to 2",
+      "1 to 3",
+      "1 to 4"
     ],
-    "correctAnswer": "Choice B"
+    "correctAnswer": "1 to 3"
   },
   {
     "id": 7,

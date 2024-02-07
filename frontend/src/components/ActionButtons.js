@@ -23,8 +23,8 @@ function ActionButtons({ onUseGpt, onEditGpt, onWriteOwn, handleSubmitSurvey, ra
         if (nextSurveyNumber <= 15) {
             navigate(`/survey/${nextSurveyNumber}`);
         } else {
-            // If the surveys are finished, navigate to the first multiple-choice question
-            navigate('/mcq/1');
+            // If the surveys are finished, navigate to the multiple-choice question instruction page
+            navigate('/mcq-instruction');
         }
     };
 

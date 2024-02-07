@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../assets/DemographicSurvey.css';
 
@@ -21,6 +21,27 @@ function DemographicSurvey({ userSessionId }) {
         'Masters Degree',
         'Doctorate Degree'
     ];
+
+    useEffect(() => {
+        // Push a new entry into the history stack
+        window.history.pushState(null, null, window.location.pathname);
+
+        // Handle back button or back navigation
+        const handleBack = (event) => {
+            event.preventDefault(); // Prevent default back behavior
+
+            // Display an alert message
+            alert("You cannot go back during the survey.");
+        };
+
+        // Add event listener for popstate
+        window.addEventListener('popstate', handleBack);
+
+        // Cleanup function
+        return () => {
+            window.removeEventListener('popstate', handleBack);
+        };
+    }, [navigate]);
 
     const handleInputChange = (event) => {
         const { name, value } = event.target;
