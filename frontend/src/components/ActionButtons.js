@@ -20,7 +20,7 @@ function ActionButtons({ onUseGpt, onEditGpt, onWriteOwn, handleSubmitSurvey, ra
         const nextSurveyNumber = currentSurveyNumber + 1;
 
         // If the next survey number is less than or equal to 15, navigate to it
-        if (nextSurveyNumber <= 15) {
+        if (nextSurveyNumber <= 20) {
             navigate(`/survey/${nextSurveyNumber}`);
         } else {
             // If the surveys are finished, navigate to the multiple-choice question instruction page

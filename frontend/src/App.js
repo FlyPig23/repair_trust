@@ -21,7 +21,7 @@ function App() {
             <Routes>
                 <Route path="/" element={<ConsentPage setUserSessionId={setUserSessionId} />} />
                 <Route path="/survey-instruction" element={<SurveyInstruction />} />
-                {[...Array(15)].map((_, index) => (
+                {[...Array(20)].map((_, index) => (
                     <Route
                         key={index}
                         path={`/survey/${index + 1}`}

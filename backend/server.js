@@ -48,14 +48,14 @@ async function main() {
 
     app.post('/submit-survey', async (req, res) => {
         try {
-            const { userSessionId, surveyNumber, gptResponse, ratings, actionChoice, timeSpent } = req.body;
+            const { userSessionId, surveyNumber, imageIndex, gptResponse, ratings, actionChoice, timeSpent } = req.body;
             const usersDatabase = client.db(usersDbName);
             const usersCollection = usersDatabase.collection("users");
 
             // Add the survey result to the user's document
             const result = await usersCollection.updateOne(
                 { userSessionId },
-                { $push: { surveys: { surveyNumber, gptResponse, ratings, actionChoice, timeSpent } } }
+                { $push: { surveys: { surveyNumber, imageIndex, gptResponse, ratings, actionChoice, timeSpent } } }
             );
 
             res.status(200).json({ message: "Survey data saved successfully", result });

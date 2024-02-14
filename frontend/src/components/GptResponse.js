@@ -1,10 +1,24 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import '../assets/GptResponse.css';
 
-function GptResponse({ responseText, isEditable, onGptResponseChange }) {
+function GptResponse({ initialResponseText, isEditable, onGptResponseChange }) {
+    // Initialize responseText state
+    const [responseText, setResponseText] = useState(initialResponseText);
+
+    // Handle changes to the textarea
     const handleChange = (event) => {
-        onGptResponseChange(event.target.value);
+        setResponseText(event.target.value);
+        if (onGptResponseChange) {
+            onGptResponseChange(event.target.value); // Call onGptResponseChange if it's provided
+        }
     };
+
+    // Update responseText if initialResponseText changes
+    useEffect(() => {
+        if (initialResponseText !== undefined) { // Check if initialResponseText is not undefined before setting it
+            setResponseText(initialResponseText);
+        }
+    }, [initialResponseText]);
 
     return (
         <div className="gpt-response">
