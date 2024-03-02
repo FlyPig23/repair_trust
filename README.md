@@ -7,3 +7,9 @@ Steps:
 3. node server.js
 4. cd frontend
 5. npm start
+
+Check user data (use Terminal):
+1. mongosh
+2. use usersData
+3. db.users.find({})
+
