@@ -10,6 +10,8 @@ function DemographicSurvey({ userSessionId }) {
         education: '',
         colorBlind: '',
         familiarity: '',
+        aiExperience: '',
+        aiTrust: '',
         comments: ''
     });
 
@@ -51,7 +53,7 @@ function DemographicSurvey({ userSessionId }) {
         }));
     };
 
-    const isFormComplete = formData.age && formData.gender && formData.education && formData.colorBlind && formData.familiarity;
+    const isFormComplete = formData.age && formData.gender && formData.education && formData.colorBlind && formData.familiarity && formData.aiExperience && formData.aiTrust;
 
     const handleDemographicSurveySubmit = async (event) => {
         event.preventDefault();
@@ -66,7 +68,7 @@ function DemographicSurvey({ userSessionId }) {
             });
             if (response.ok) {
                 console.log('Demographic data submitted successfully');
-                navigate('/thank-you'); // Navigate to a thank-you page or home page
+                navigate('/survey-instruction'); // Navigate to the experiment instruction page
             } else {
                 throw new Error('Failed to submit demographic data');
             }
@@ -128,6 +130,26 @@ function DemographicSurvey({ userSessionId }) {
                             <option value="not_familiar">I have never created a visualization.</option>
                             <option value="somewhat">I am somewhat familiar.</option>
                             <option value="very_familiar">I have created visualization systems before.</option>
+                        </select>
+                    </div>
+
+                    <div className="form-group">
+                        <label>Please select your experience with AI systems.</label>
+                        <select name="aiExperience" value={formData.aiExperience} onChange={handleInputChange}>
+                            <option value="" disabled>Select your experience level</option>
+                            <option value="not_familiar">I have never used an AI system.</option>
+                            <option value="somewhat">I am somewhat familiar.</option>
+                            <option value="very_familiar">I have used AI systems before.</option>
+                        </select>
+                    </div>
+
+                    <div className="form-group">
+                        <label>Please select your trust in AI systems generally.</label>
+                        <select name="aiTrust" value={formData.aiTrust} onChange={handleInputChange}>
+                            <option value="" disabled>Select your trust level</option>
+                            <option value="not_trust">I do not trust AI systems.</option>
+                            <option value="somewhat_trust">I somewhat trust AI systems.</option>
+                            <option value="trust">I trust AI systems.</option>
                         </select>
                     </div>
 

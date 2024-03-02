@@ -4,9 +4,9 @@ import GptResponse from './GptResponse';
 import RatingArea from './RatingArea';
 import ActionButtons from './ActionButtons';
 import {useNavigate} from "react-router-dom";
-import visualizationData from '../assets/data/visualizations_data.json';
+import visualizationData from '../assets/data/visualizations_data_15.json';
 
-function SurveyPage({ iteration, userSessionId }) {
+function SurveyPage({ iteration, userSessionId, group }) {
     const [initialGptResponse, setInitialGptResponse] = useState(''); // Store the initial GPT response
     const [currentGptResponse, setCurrentGptResponse] = useState(''); // Current GPT response being edited
     const [ratings, setRatings] = useState({
@@ -39,14 +39,24 @@ function SurveyPage({ iteration, userSessionId }) {
             setImageData(selectedImage);
             usedIndicesRef.current.push(visualizationData.findIndex(item => item.index === selectedImage.index));
 
-            let description;
-            if (iteration <= 10) {
-                description = selectedImage.correct_description;
-            } else if (iteration <= 13) {
-                description = selectedImage.incorrect_description;
-            } else if (iteration <= 20) {
-                description = selectedImage.correct_description;
+            // Determine the description based on iteration
+            let description = '';
+            if (group === 'bbc') {
+                if (iteration <= 10) {
+                    description = selectedImage.incorrect_description;
+                } else {
+                    description = selectedImage.correct_description;
+                }
+            } else if (group === 'cbc') {
+                if (iteration <= 5 || iteration > 10) {
+                    description = selectedImage.correct_description;
+                } else {
+                    description = selectedImage.incorrect_description;
+                }
             }
+
+            // Add the attention check statement to the end of the description
+            description += " Attention Check: If you choose to Edit AI Response, delete this sentence.";
 
             // Update GPT response states
             setInitialGptResponse(description);
@@ -54,7 +64,7 @@ function SurveyPage({ iteration, userSessionId }) {
         };
 
         selectRandomImage();
-    }, [iteration]);
+    }, [iteration, group]);
 
     // Update startTimeRef at the beginning of each survey page render
     useEffect(() => {
@@ -158,21 +168,23 @@ function SurveyPage({ iteration, userSessionId }) {
                 <RatingArea
                     ratings={ratings}
                     onRatingChange={setRatings}
+                    context={'surveyPage'}
                 />
                 <ActionButtons
                     onUseGpt={() => {
                         handleUseGpt();
-                        setActionChoice('Use GPT');
+                        setActionChoice('Use GPT Response');
                     }}
                     onEditGpt={() => {
                         handleEditGpt();
-                        setActionChoice('Edit GPT');
+                        setActionChoice('Edit GPT Response');
                     }}
                     onWriteOwn={() => {
                         handleWriteOwn();
-                        setActionChoice('Write My Own');
+                        setActionChoice('Write My Own Response');
                     }}
                     handleSubmitSurvey={handleSubmitSurvey}
+                    iteration={iteration}
                     ratings={ratings}
                     actionChoice={actionChoice}
                 />

@@ -1,0 +1,21 @@
+/* ThankYouPage.css */
+.thank-you-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    padding: 20px;
+}
+
+.thank-you-container h1 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.thank-you-container p {
+    font-size: 1.2rem;
+    color: #666;
+}

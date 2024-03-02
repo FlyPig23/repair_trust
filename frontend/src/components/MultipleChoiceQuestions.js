@@ -72,8 +72,8 @@ function MultipleChoiceQuestions({ questionNumber, userSessionId }) {
                 if (nextQuestionNumber <= mcqData.length) {
                     navigate(`/mcq/${nextQuestionNumber}`);
                 } else {
-                    // Navigate to the demographic survey page or completion page
-                    navigate('/demographic-survey');
+                    // Navigate to the "thank you" page
+                    navigate('/thank-you');
                 }
             } else {
                 throw new Error('Failed to submit answer');

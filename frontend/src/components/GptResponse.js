@@ -22,7 +22,7 @@ function GptResponse({ initialResponseText, isEditable, onGptResponseChange }) {
 
     return (
         <div className="gpt-response">
-            <h3>GPT Response</h3>
+            <h3>AI Response</h3>
             <textarea
                 readOnly={!isEditable}
                 value={responseText}

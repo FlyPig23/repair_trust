@@ -27,16 +27,17 @@ function SurveyInstruction() {
     }, [navigate]);
 
     const handleStartSurvey = () => {
-        navigate('/survey/1');
+        navigate('/check-1');
     };
 
     return (
         <div className="survey-instruction-container">
             <h1>Survey Instructions</h1>
             <ul>
-                <li>You will be given 15 questions.</li>
-                <li>Each question will require you to evaluate a ChatGPT response and provide a final response.</li>
+                <li>You will be given 15 data visualizations.</li>
+                <li>Each turn will require you to evaluate a ChatGPT response and provide a final response.</li>
                 <li>Answer to the best of your ability. You cannot skip questions.</li>
+                <li>Write no more than 3 sentences for each response if you choose to write your own.</li>
             </ul>
             <button onClick={handleStartSurvey}>Start Survey</button>
         </div>

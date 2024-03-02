@@ -36,12 +36,34 @@ async function main() {
             const result = await usersCollection.insertOne({
                 userSessionId,
                 consent: formData,
-                surveys: []
+                demographicData: [],
+                checkPageRatings: [],
+                surveys: [],
+                mcqAnswers: [],
             });
 
             res.status(200).json({ message: "Form data saved successfully", userSessionId });
         } catch (error) {
             res.status(500).json({ message: "Error saving form data", error });
+            console.error(error);
+        }
+    });
+
+    app.post('/submit-checkpage', async (req, res) => {
+        try {
+            const { userSessionId, batch, ratings, repairType } = req.body;
+            const usersDatabase = client.db(usersDbName);
+            const usersCollection = usersDatabase.collection("users");
+
+            // Add the check page rating result to the user's document
+            const result = await usersCollection.updateOne(
+                { userSessionId },
+                { $push: { checkPageRatings: { batch, ratings, repairType } } }
+            );
+
+            res.status(200).json({ message: "Check page data saved successfully", result });
+        } catch (error) {
+            res.status(500).json({ message: "Error saving check page data", error });
             console.error(error);
         }
     });
@@ -74,7 +96,7 @@ async function main() {
             // Add the answer to the user's document
             const result = await usersCollection.updateOne(
                 { userSessionId },
-                { $push: { 'mcqAnswers': { questionNumber, choice, isCorrect, responseTime } } }
+                { $push: { mcqAnswers: { questionNumber, choice, isCorrect, responseTime } } }
             );
 
             res.status(200).json({ message: "MCQ answer saved successfully", result });
@@ -93,7 +115,7 @@ async function main() {
             // Update the user's document with the demographic data
             const result = await usersCollection.updateOne(
                 { userSessionId },
-                { $set: { demographicData: demographicData } }
+                { $push: { demographicData: demographicData } }
             );
 
             res.status(200).json({ message: "Demographic data saved successfully", result });

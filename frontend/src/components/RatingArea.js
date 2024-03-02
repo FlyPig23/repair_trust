@@ -8,9 +8,23 @@ import neutral from '../assets/images/neutral.png';
 import satisfied from '../assets/images/satisfied.png';
 import verySatisfied from '../assets/images/very_satisfied.png';
 
-function RatingArea({ ratings, onRatingChange }) {
+function RatingArea({ ratings, onRatingChange, context }) {
     const faces = [veryUnsatisfied, unsatisfied, neutral, satisfied, verySatisfied];
-    const faceLabels = ["Very Unsatisfied", "Unsatisfied", "Neutral", "Satisfied", "Very Satisfied"]; // Labels for each face
+    const faceLabels = context === 'checkPage'
+        ? ["Very Unconfident", "Unconfident", "Neutral", "Confident", "Very Confident"]
+        : ["Very Unsatisfied", "Unsatisfied", "Neutral", "Satisfied", "Very Satisfied"];
+
+    const questions = context === 'checkPage'
+        ? [
+            "I believe AI response will be good quality",
+            "I believe AI response will be factual",
+            "I believe AI response will be trustworthy"
+        ]
+        : [
+            "I believe AI response is good quality",
+            "I believe AI response is factual",
+            "I believe AI response is trustworthy"
+        ];
 
     const handleRatingChange = (ratingType, value) => {
         onRatingChange({ ...ratings, [ratingType]: value });
@@ -35,18 +49,12 @@ function RatingArea({ ratings, onRatingChange }) {
     return (
         <div className="rating-area">
             <h3>Ratings</h3>
-            <div>
-                <label>I believe this is good quality</label>
-                {renderFaces('quality')}
-            </div>
-            <div>
-                <label>I am confident that GPT is factual</label>
-                {renderFaces('factual')}
-            </div>
-            <div>
-                <label>I trust GPT response</label>
-                {renderFaces('trust')}
-            </div>
+            {questions.map((question, index) => (
+                <div key={index}>
+                    <label>{question}</label>
+                    {renderFaces(Object.keys(ratings)[index], question)}
+                </div>
+            ))}
         </div>
     );
 }
