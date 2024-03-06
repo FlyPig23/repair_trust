@@ -7,6 +7,19 @@ function ConsentPage({ setUserSessionId, group}) {
 
     const handleConsent = async () => {
         try {
+            // Fetch the user's IP address
+            const ipResponse = await fetch('https://api.ipify.org?format=json');
+            if (!ipResponse.ok) {
+                throw new Error('Failed to fetch IP address');
+            }
+            const { ip } = await ipResponse.json();
+
+            const consentData = {
+                consentAgreed: true,
+                group,
+                ipAddress: ip, // Include the fetched IP address
+            };
+
             const response = await fetch('http://localhost:3000/submit-consent', {
                 method: 'POST',
                 headers: {
@@ -14,7 +27,7 @@ function ConsentPage({ setUserSessionId, group}) {
                 },
                 // Assuming the server expects the consent agreement in the request.
                 // Modify as per server's requirement.
-                body: JSON.stringify({ consentAgreed: true, group }),
+                body: JSON.stringify(consentData),
             });
             if (response.ok) {
                 const result = await response.json();
