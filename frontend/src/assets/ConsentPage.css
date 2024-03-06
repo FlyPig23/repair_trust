@@ -1,48 +1,45 @@
 .consent-container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    height: auto; /* Set to auto to take only the required space */
-    max-height: 90vh; /* Maximum height to ensure it doesn't take full screen */
-    padding: 20px; /* Added padding for smaller screens */
-    margin-top: 5vh; /* Added margin for smaller screens */
-}
-
-.consent-form {
-    width: 60%; /* Adjust width as needed */
-    max-width: 800px; /* Maximum width */
-    padding: 20px;
-    background-color: #f4f4f4;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    overflow-y: auto; /* In case the text is too long */
-    max-height: 70vh; /* Maximum height for the form to ensure it doesn't get too large */
-}
-
-.consent-form h1 {
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-.consent-text {
-    margin-bottom: 20px;
-    text-align: justify; /* For better readability */
-    line-height: 1.6; /* Line height for better readability */
-}
-
-.consent-form button.consent-button {
+    justify-content: flex-start; /* Start items at the top */
+    height: 90vh; /* Adjusted for viewport height */
     padding: 10px 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+    overflow: auto; /* Add scrollbars when content overflows */
+}
+
+.consent-container h1 {
+    text-align: center;
+    color: #007bff; /* iOS blue for headers */
+}
+
+.consent-container p {
+    font-size: 16px; /* Slightly smaller font size for iOS-like text */
+    line-height: 1.6;
+    text-align: justify;
+    margin-bottom: 20px; /* Reduced margin */
+}
+
+.consent-container button.consent-button {
+    padding: 12px 24px; /* Larger padding for a more clickable area */
     background-color: #007bff;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 15px; /* More rounded corners for buttons */
     cursor: pointer;
-    width: auto; /* Adjust width as needed */
-    display: block; /* Center the button */
-    margin: 20px auto; /* Center the button and add margin on top and bottom */
+    font-size: 18px; /* Larger font size */
+    transition: background-color 0.3s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow for the button */
+    display: block; /* Make the button a block-level element */
+    width: fit-content; /* Fit the content width */
+    margin: 20px auto; /* Auto margins for left and right to center the button */
 }
 
-.consent-form button.consent-button:hover {
+.consent-container button.consent-button:hover {
     background-color: #0056b3;
 }

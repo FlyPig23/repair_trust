@@ -4,70 +4,70 @@
         "image": "/visualizations/1.png",
         "title": "Change in number of working-age people, 2023-2050",
         "correct_description": "The image is a world map highlighting the projected change in the number of working-age people from 2023 to 2050. Working-age is defined as individuals aged 15 to 64. The data is sourced from the U.N. World Population Prospects 2022. Countries are represented by circles whose size indicates the magnitude of change. Green circles denote an increase, while orange circles represent a decrease. Significant changes include India with an increase of 147 million, Nigeria with 114 million, and Pakistan with 100 million. In contrast, China shows a massive decrease of 216 million, with Russia and Japan also experiencing declines of 16 million and 19 million, respectively.",
-        "incorrect_description": "The image is a world map indicating the immediate population growth in various countries. The map shows the total population size in different countries as of 2023. The circles in orange indicate countries with the highest populations, while the green circles show countries with smaller populations. Notable countries with large populations include Australia with 3 million and Chile with 1 million. Conversely, countries like China and India show a population decrease, with figures such as -216 million and -147 million respectively."
+        "incorrect_description": "The image is a world map indicating the immediate population growth in various countries. The map shows the total population size in different countries as of 2023. The circles in orange indicate countries with the highest populations, while the green circles show countries with smaller populations. Notable countries with large populations include USA with 3 million and India with 1 million. Conversely, countries like China and Spain show a population decrease, with figures such as -216 million and -147 million respectively."
     },
     {
         "index": 2,
         "image": "/visualizations/2.png",
         "title": "Where Migrant Children Were Sent to Live With Non-Parent Sponsors",
         "correct_description": "This image displays a choropleth map of the United States, showing where migrant children were sent to live with non-parent sponsors. The map uses various shades of blue to represent the number of children per 100,000 residents in each area, with darker shades indicating higher numbers. The map includes a legend that ranges from 0 to 30 children per 100,000 residents. The data seems to be more concentrated in certain areas, indicating a higher number of migrant children placed with sponsors in these locations.",
-        "incorrect_description": "The image is a precipitation map of the United States, showing average rainfall distribution. Shades of blue indicate the volume of rainfall, with darker shades representing higher rainfall. The legend suggests a scale of 0 to 30 inches of rain per 100,000 residents, which is an unconventional way to measure rainfall."
+        "incorrect_description": "The image is a precipitation map of the United States, showing average rainfall distribution. Shades of blue indicate the volume of rainfall, with darker shades representing higher rainfall. The legend suggests a scale of 0 to 30 inches of rain per year, which is an conventional way to measure rainfall."
     },
     {
         "index": 3,
         "image": "/visualizations/3.png",
         "title": "Drug overdose deaths per 100,000 residents",
         "correct_description": "The image shows a line graph comparing the rates of drug overdose deaths per 100,000 residents between San Francisco and the United States over time, from 2010 to 2023. Two lines are plotted: a sharp, rising line for San Francisco, and a more gradual rising line for the United States. The data illustrates that while both rates have increased, San Francisco's rate has surged dramatically, especially from around 2018, far outpacing the national average. The 12-month rolling averages are shown, and it is noted that the drug death numbers for 2023 are provisional. The source of the data is the CDC.",
-        "incorrect_description": "The image depicts a line graph showing the growth in recreational drug use in San Francisco compared to the entire United States from 2010 to 2023. Two lines indicate a steady increase in drug use, with San Francisco's trend line rising sharply and exceeding that of the national average significantly starting in 2018. The graph suggests that recreational drug use is more common in San Francisco than in the rest of the country."
+        "incorrect_description": "The image depicts a line graph showing the growth in recreational drug use in St. Louis compared to the entire United States from 2000 to 2020. Two lines indicate a steady increase in drug use, with St Louis's trend line rising sharply and exceeding that of the national average significantly starting in 2018. The graph suggests that recreational drug use is more common in St. Louis than in the rest of the country."
     },
     {
         "index": 4,
         "image": "/visualizations/4.png",
         "title": "Change in total market value since Oct. 12, 2022",
         "correct_description": "The provided image is a line graph that shows the change in total market value since October 12, 2022, for three different entities: the 'Magnificent Seven' technology stocks (which includes Alphabet, Amazon, Apple, Meta, Microsoft, Nvidia, Tesla), the S&P 500 index, and the remaining 493 companies in the S&P 500. The 'Magnificent Seven' are represented by an orange line, which shows a significant increase in market value, peaking at around 70% above the October 12 level. The S&P 500 index, shown in light blue, displays more moderate growth, while the market value of the remaining 493 companies, illustrated with a dark blue line, shows the least growth. The data is sourced from FactSet and is as of market close on January 19.",
-        "incorrect_description": "The image depicts a line graph detailing the percentage growth in sales for the 'Magnificent Seven' technology companies, the S&P 500 index, and the remaining companies within the S&P 500 since October 12, 2022. The orange line suggests a drastic increase in sales by over 70%. The S&P 500 and the remaining companies appear to show a change in their sales figures as well."
+        "incorrect_description": "The image depicts a line graph detailing the percentage growth in sales for the 'Magnificent Seven' technology companies, the S&P 500 index, and the remaining companies within the S&P 500 since October 12, 2022. The orange line suggests a drastic increase in sales by about 10%. The S&P 500 and the remaining companies appear to show a change in their sales figures as well."
     },
     {
         "index": 5,
         "image": "/visualizations/5.png",
         "title": "Annual southwestern border apprehensions",
         "correct_description": "The image is a bar chart representing the annual southwestern border apprehensions by the fiscal year, from October to September, spanning from the year 2000 to 2023. The data show fluctuations in apprehensions over the years with a notable increase in recent years. The years 2021 and 2022 stand out with 1.66 million and 2.21 million apprehensions respectively, showing a sharp rise. The year 2023 shows a slight decrease to 2.05 million. It's important to note that the chart only includes encounters between ports of entry as provided by U.S. Customs and Border Protection.",
-        "incorrect_description": "The image appears to be a bar chart displaying annual tourism rates to the southwestern United States from the year 2000 to 2023. The latest years, 2021 to 2023, show a substantial increase in tourism with more than 2 million visits annually, suggesting a booming interest in the region."
+        "incorrect_description": "The image appears to be a bar chart displaying annual tourism rates to the southwestern United States from the year 2000 to 2023. The latest years, 2020 to 2023, show a substantial decrease in tourism with more than 2 million visits annually, suggesting a sharp decline in tourism to the region."
     },
     {
         "index": 6,
         "image": "/visualizations/6.png",
         "title": "Young Children Make Up the Largest Group Facing Eviction",
         "correct_description": "The image is a horizontal bar chart displaying the age demographics of individuals facing eviction. The chart compares the share of all renters with the share of those facing eviction, indicating that young children (0-4 years old) make up a larger proportion of those facing eviction (12%) compared to their share among all renters (9%). The data, covering 2007-2016, is sourced from a comprehensive demographic profile by researchers at Princeton, Rutgers, and the U.S. Census Bureau.",
-        "incorrect_description": "The image appears to be a horizontal bar chart that shows the percentage of various age groups participating in early childhood education programs. It suggests that the largest group in these programs are children aged 0-4 years, which make up 12% of all participants, contrasting with the 9% share of all renters. The data comes from research covering 2007-2016."
+        "incorrect_description": "The image appears to be a horizontal bar chart that shows the percentage of various age groups participating in early childhood education programs. It suggests that the largest group in these programs are children aged 0-4 years, which make up 12% of all participants, contrasting with the 5% share of all renters. The data comes from research covering 2000-2020."
     },
     {
         "index": 7,
         "image": "/visualizations/7.png",
         "title": "Top relative rating performances, 2020 through 2023",
         "correct_description": "The image is a bar chart depicting the top relative rating performances for various NFL teams from 2020 through 2023. It highlights the teams and their respective seasons that had the highest ratings advantage over similar games during this period. The 49ers in 2023 top the chart with a 34% ratings advantage, followed by the Eagles in 2023 with 26%. Notably, the 'Chiefs with Swift' in 2023 is highlighted in red, indicating a special event or combination, with a 25% advantage. The data includes only games played on their namesake day for teams with at least four such games in a season, except the Chiefs and Swift combo. The source of the ratings is Nielsen viewership estimates via Sports Media Watch.",
-        "incorrect_description": "The image presents a ranking of the top music album releases from 2020 to 2023, with 'Chiefs with Swift' marked in red indicating a collaboration album in 2023. The percentages represent the album's chart advantage over similar genre releases in the same year, with the 49ers and Eagles albums of 2023 lead the list with 34% and 26% advantages."
+        "incorrect_description": "The image presents a ranking of the top music album releases from 2020 to 2023, with 'Chiefs with Swift' marked in red indicating a collaboration album in 2023. The percentages represent the album's chart advantage over similar genre releases in the same year, with the Cowboys and Bengals albums of 2023 lead the list with 34% and 26% advantages."
     },
     {
         "index": 8,
         "image": "/visualizations/8.png",
         "title": "Total delegates allocated to each candidate",
         "correct_description": "The image is a graphical representation of the total delegates allocated to political candidates. Kimberly Black leads with 63 delegates, followed by Fiona Springer with 17. Warren Turner and John Arnold, who have dropped out of the race, have 9 and 3 delegates respectively. The graphic indicates that a total of 1,215 delegates are needed to win the nomination. The bar lengths visually correspond to the number of delegates each candidate has secured. The 92 delegates allocated so far are part of the overall count required to secure the nomination.",
-        "incorrect_description": "The image seems to display a score ranking for a competition, with Kimberly Black in the lead with a score of 63, followed by Fiona Springer with 17. Warren Turner and John Arnold are also shown with scores of 9 and 3, although they appear to have dropped out of the contest."
+        "incorrect_description": "The image seems to display a score ranking for a competition, with Warren Turner in the lead with a score of 63, followed by Fiona Springer with 17. Kimberly Black and John Arnold are also shown with scores of 6 and 3, although they appear to have dropped out of the contest."
     },
     {
         "index": 9,
         "image": "/visualizations/9.png",
         "title": "2023 could be a standout year for strikes, though it will not reach past highs",
         "correct_description": "The image displays a bar chart tracking the number of employees involved in work stoppages in the United States from 1980 to 2023. The bars represent different years, with the height indicating the number of workers involved. The chart shows a significant increase in 2023, suggesting it could be a standout year for strikes, though the total number of workers involved doesn't surpass past peaks. The note on the chart highlights that a full-scale U.A.W. strike could increase this year's total to nearly 460,000 workers, which would still be below the highest levels seen in earlier years, as indicated by the taller bars in the 1980s.",
-        "incorrect_description": "The image seems to show a bar chart representing the annual profit margins of U.S. companies from 1980 to 2023. The bars show an increase in profits in 2023, with a projection that a full-scale U.A.W. strike could boost the profits to nearly 460,000 dollars."
+        "incorrect_description": "The image seems to show a bar chart representing the annual profit margins of U.S. companies from 1980 to 2023. The bars show an increase in profits in 2010, with a projection that a full-scale U.A.W. strike could boost the profits to nearly 460,00 dollars."
     },
     {
         "index": 10,
         "image": "/visualizations/10.png",
         "title": "Biggest Domestic Weekend Box Office Grosses",
         "correct_description": "The image is a graphical representation of the biggest domestic weekend box office grosses, not adjusted for inflation. It showcases the top-grossing movies on their opening weekend and their respective earnings and share of the weekend's total box office. 'Avengers: Endgame' from April 26-28, 2019, has the highest earnings with $357 million, accounting for 89 percent of that weekend's total. 'Barbie' from July 21-23, 2023, is notable with $162 million, taking 52 percent of the weekend total. The data is sourced from Box Office Mojo.",
-        "incorrect_description": "The image seems to depict a ranking of the most popular children's toys sold over certain weekends, with 'Barbie' leading in July 2023 with sales of $162 million. Other entries include 'Avengers' and 'Star Wars' themed toys."
+        "incorrect_description": "The image seems to depict a ranking of the most popular children's toys sold over certain weekends, with 'Barbie' leading in July 2023 with sales of $311 million. Other entries include 'Avengers' and 'Star Wars' themed toys."
     },
     {
         "index": 11,
@@ -81,27 +81,27 @@
         "image": "/visualizations/12.png",
         "title": "Degrees warmer or cooler than average",
         "correct_description": "The image depicts a choropleth map of the United States, showing the temperature deviations from October 1 through March 31, compared with the 2008-2022 average for the same period. Areas in blue are cooler than average, with variations up to -6 degrees Fahrenheit, while areas in orange are warmer, showing increases up to +6 degrees Fahrenheit. The map indicates that most of the western US has been cooler than average, while the eastern part is predominantly warmer. Data is sourced from the PRISM Climate Group at Oregon State University and accessed via Climate Engine. The map notes that data for Alaska and Hawaii is not available.",
-        "incorrect_description": "The image here is a mood map of the United States, a sort of emotional thermometer that tracks the ebb and flow of vibes across the country. The blue areas are where people are feeling a bit chilly and reserved, perhaps contemplating the deeper meanings of life or deciding what kind of tea to sip. As for the orange zones, that's where the excitement is! Parties are popping, people are probably salsa dancing in the streets, and every day is a celebration of warmth and joy. It's like the country is blushing with enthusiasm in those regions!"
+        "incorrect_description": "The image here is a mood map of Canada, a sort of emotional thermometer that tracks the ebb and flow of vibes across the country. The grey areas are where people are feeling a bit chilly and reserved, perhaps contemplating the deeper meanings of life or deciding what kind of tea to sip. As for the green zones, that's where the excitement is! Parties are popping, people are probably salsa dancing in the streets, and every day is a celebration of warmth and joy. It's like the country is blushing with enthusiasm in those regions!"
     },
     {
         "index": 13,
         "image": "/visualizations/13.png",
         "title": "Baby Boomers Hold Half of the Nation's $140 Trillion in Wealth",
         "correct_description": "The image is a distribution chart of the nation's wealth, segmented by generation. It shows that Baby Boomers, born between 1946-64, hold $78.3 trillion in assets, which is about half of the nation's total wealth at $140 trillion. Their assets are diversified across equities, real estate, private businesses, and other assets. Other generations such as Generation X, the Silent Generation, and Millennials also hold significant portions of wealth, each with their own asset distributions. This information is sourced from the Federal Reserve.",
-        "incorrect_description": "The image appears to present a revenue breakdown of different demographic groups within a large corporation, with Baby Boomers generating $78.3 trillion in revenue. It looks like a corporate financial report that outlines revenue by age group, with Baby Boomers contributing the most, followed by Generation X, the Silent Generation, and Millennials."
+        "incorrect_description": "The image appears to present a revenue breakdown of different demographic groups within a large corporation, with Baby Boomers generating $47.8 trillion in revenue. It looks like a corporate financial report that outlines revenue by age group, with Millennials contributing the most, followed by Generation X."
     },
     {
         "index": 14,
         "image": "/visualizations/14.png",
         "title": "The top 250 scorers in N.B.A. history",
         "correct_description": "The image is a line graph that traces the career point totals of the top 250 scorers in NBA history. It shows the cumulative points over time, with LeBron James recently surpassing Kareem Abdul-Jabbar's record, setting a new high. Current players are highlighted in blue, with LeBron James leading at 38,390 points as of 2023. Historical players like Wilt Chamberlain, Karl Malone, and Michael Jordan are also included, with their final career totals marked. The source of the data is Basketball-reference.com, and the data is up to February 7.",
-        "incorrect_description": "The image seems to illustrate the annual sales figures for the top 250 products in a sporting goods company, with a recent surge in sales for a product named 'LeBron James.' The lines represent sales over time, and the blue lines indicate current leading products."
+        "incorrect_description": "The image seems to illustrate the annual sales figures for the top 250 products in a sporting goods company, with a recent surge in sales for a product named 'Stephen Curry.' The lines represent sales over time, and the blue lines indicate current leading products."
     },
     {
         "index": 15,
         "image": "/visualizations/15.png",
         "title": "How conditions are faring for jobs, income, consumers and production",
         "correct_description": "The image is a quadrant chart that assesses the current state of economic conditions related to jobs, income, consumers, and production. The horizontal axis indicates if conditions are currently good or bad, while the vertical axis shows if conditions are getting better or worse. Categories such as 'Inflation' and 'Consumer sentiment' are classified as bad but getting better. 'Payroll employment' and 'Industrial production' are among those listed as good and getting better. Conversely, 'Job openings' and 'Building permits' are perceived as good but getting worse. This visual helps to quickly understand the complex interplay between different economic indicators.",
-        "incorrect_description": "The image seems to depict a performance review grid for a company's departments, with axes measuring current performance and trends. It categorizes departments like 'Inflation' and 'Consumer sentiment' as underperformers improving over time, while 'Payroll employment' and 'Industrial production' are excelling and continuing to improve."
+        "incorrect_description": "The image seems to depict a performance review grid for a company's departments, with axes measuring current performance and trends. It categorizes departments like 'Job openings' and 'Capital goods' as underperformers improving over time, while 'Payroll employment' and 'Industrial production' are excelling and continuing to improve."
     }
 ]

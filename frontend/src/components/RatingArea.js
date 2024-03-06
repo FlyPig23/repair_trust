@@ -8,29 +8,31 @@ import neutral from '../assets/images/neutral.png';
 import satisfied from '../assets/images/satisfied.png';
 import verySatisfied from '../assets/images/very_satisfied.png';
 
-function RatingArea({ ratings, onRatingChange, context }) {
+function RatingArea({ ratings, onRatingChange, context, attentionCheckLevel }) {
     const faces = [veryUnsatisfied, unsatisfied, neutral, satisfied, verySatisfied];
     const faceLabels = context === 'checkPage'
         ? ["Very Unconfident", "Unconfident", "Neutral", "Confident", "Very Confident"]
         : ["Very Unsatisfied", "Unsatisfied", "Neutral", "Satisfied", "Very Satisfied"];
+    const attentionLabel = context !== 'checkPage' ? `Choose '${faceLabels[attentionCheckLevel - 1]}' to pass the attention check` : null;
 
     const questions = context === 'checkPage'
         ? [
-            "I believe AI response will be good quality",
-            "I believe AI response will be factual",
+            "I believe AI response will be reliable",
+            "I believe AI response will be accurate",
             "I believe AI response will be trustworthy"
         ]
         : [
-            "I believe AI response is good quality",
-            "I believe AI response is factual",
-            "I believe AI response is trustworthy"
+            "I believe AI response is reliable",
+            "I believe AI response is accurate",
+            "I believe AI response is trustworthy",
+            attentionLabel
         ];
 
     const handleRatingChange = (ratingType, value) => {
         onRatingChange({ ...ratings, [ratingType]: value });
     };
 
-    const renderFaces = (ratingType) => (
+    const renderFaces = (ratingType, questionIndex) => (
         <div className="rating-faces">
             {faces.map((face, index) => (
                 <div key={index} className="face-container">
@@ -52,7 +54,7 @@ function RatingArea({ ratings, onRatingChange, context }) {
             {questions.map((question, index) => (
                 <div key={index}>
                     <label>{question}</label>
-                    {renderFaces(Object.keys(ratings)[index], question)}
+                    {renderFaces(Object.keys(ratings)[index], index)}
                 </div>
             ))}
         </div>

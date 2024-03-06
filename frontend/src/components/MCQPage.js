@@ -3,7 +3,7 @@ import MCQVisualization from './MCQVisualization';
 import MultipleChoiceQuestions from './MultipleChoiceQuestions';
 import { useNavigate } from 'react-router-dom';
 
-function MCQPage({ iteration, userSessionId }) {
+function MCQPage({ iteration, userSessionId, imageId }) {
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -30,7 +30,7 @@ function MCQPage({ iteration, userSessionId }) {
     return (
         <div className="app-container">
             <div className="left-panel">
-                <MCQVisualization iteration={iteration} />
+                <MCQVisualization iteration={iteration} imageId={imageId} />
             </div>
             <div className="right-panel">
                 <MultipleChoiceQuestions

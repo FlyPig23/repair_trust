@@ -3,30 +3,32 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
-    padding: 20px;
-    background-color: #f4f4f4;
+    height: 90vh;
+    min-height: 700px; /* Minimum height for readability */
+    padding: 10px 20px;
+    background-color: #fff; /* Light background for a clean look */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    border-radius: 20px; /* Rounded corners */
+    margin: 20px auto;
+    max-width: 800px; /* Max width for readability */
 }
 
-.survey-instruction-container h1 {
-    margin-bottom: 20px;
+.survey-instruction-container h1, .survey-instruction-container h2 {
+    color: #007bff; /* iOS blue for headers */
     text-align: center;
-    color: #007bff;
 }
 
 .survey-instruction-container p {
-    font-size: 18px;
+    font-size: 16px; /* Slightly smaller font size for iOS-like text */
     line-height: 1.6;
     text-align: justify;
-    margin-bottom: 30px;
-    max-width: 700px;
-    width: 100%;
+    margin-bottom: 20px; /* Reduced margin */
 }
 
 .survey-instruction-container ul {
     list-style: inside;
-    margin: 0;
     padding: 0;
+    text-align: left; /* Align text to the left for clarity */
 }
 
 .survey-instruction-container li {
@@ -34,16 +36,17 @@
 }
 
 .survey-instruction-container button {
-    padding: 10px 20px;
+    padding: 12px 24px; /* Larger padding for a more clickable area */
     background-color: #007bff;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 15px; /* More rounded corners for buttons */
     cursor: pointer;
-    font-size: 16px;
+    font-size: 18px; /* Larger font size */
     transition: background-color 0.3s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow for the button */
 }
 
 .survey-instruction-container button:hover {
-    background-color: #0056b3;
+    background-color: #0056b3; /* Slightly darker shade on hover */
 }

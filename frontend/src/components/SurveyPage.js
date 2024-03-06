@@ -5,39 +5,38 @@ import RatingArea from './RatingArea';
 import ActionButtons from './ActionButtons';
 import {useNavigate} from "react-router-dom";
 import visualizationData from '../assets/data/visualizations_data_15.json';
+import '../assets/SurveyPage.css';
 
-function SurveyPage({ iteration, userSessionId, group }) {
+function SurveyPage({ iteration, userSessionId, group, imageId }) {
     const [initialGptResponse, setInitialGptResponse] = useState(''); // Store the initial GPT response
     const [currentGptResponse, setCurrentGptResponse] = useState(''); // Current GPT response being edited
     const [ratings, setRatings] = useState({
         quality: null,
         factual: null,
         trust: null,
+        attentionCheck: null,
     });
+    // Initialize the attentionCheckLevel state to randomly select a level for the attention check
+    const [attentionCheckLevel, setAttentionCheckLevel] = useState(Math.floor(Math.random() * 5) + 1);
     const [actionChoice, setActionChoice] = useState(null);
     const [isEditable, setIsEditable] = useState(false);
     const [imageData, setImageData] = useState(null);
-    const usedIndicesRef = useRef([]);
 
-    const startTimeRef = React.useRef(Date.now());
-
+    const startTimeRef = useRef(Date.now());
     const navigate = useNavigate();
 
     useEffect(() => {
         const selectRandomImage = () => {
-            let availableImages = visualizationData.filter((_, index) => !usedIndicesRef.current.includes(index));
-            console.log("Available images:", availableImages);
-            if (availableImages.length === 0) {
-                console.error("All images have been displayed.");
+            // Find the image by the passed imageId
+            const selectedImage = visualizationData.find((item) => item.index === imageId);
+            console.log(imageId);
+            if (!selectedImage) {
+                console.error("Image not found.");
                 return;
             }
-            let randomIndex = Math.floor(Math.random() * availableImages.length);
-            console.log("Random index:", randomIndex);
-            let selectedImage = availableImages[randomIndex];
 
-            // Update imageData state and usedIndicesRef
+            // Update imageData state
             setImageData(selectedImage);
-            usedIndicesRef.current.push(visualizationData.findIndex(item => item.index === selectedImage.index));
 
             // Determine the description based on iteration
             let description = '';
@@ -55,16 +54,13 @@ function SurveyPage({ iteration, userSessionId, group }) {
                 }
             }
 
-            // Add the attention check statement to the end of the description
-            description += " Attention Check: If you choose to Edit AI Response, delete this sentence.";
-
             // Update GPT response states
             setInitialGptResponse(description);
             setCurrentGptResponse(description);
         };
 
         selectRandomImage();
-    }, [iteration, group]);
+    }, [iteration, group, imageId]);
 
     // Update startTimeRef at the beginning of each survey page render
     useEffect(() => {
@@ -126,6 +122,7 @@ function SurveyPage({ iteration, userSessionId, group }) {
             imageIndex: imageData.index,
             gptResponse: currentGptResponse,
             ratings,
+            attentionCheckLevel,
             actionChoice,
             timeSpent,
         };
@@ -142,7 +139,8 @@ function SurveyPage({ iteration, userSessionId, group }) {
                 console.log('Survey data submitted successfully');
                 // Reset state after submission
                 setCurrentGptResponse(initialGptResponse); // Reset to initial after submission
-                setRatings({ quality: null, factual: null, trust: null });
+                setRatings({ quality: null, factual: null, trust: null, attentionCheck: null });
+                setAttentionCheckLevel(Math.floor(Math.random() * 5) + 1);
                 setActionChoice(null);
                 setIsEditable(false);
             } else {
@@ -169,6 +167,7 @@ function SurveyPage({ iteration, userSessionId, group }) {
                     ratings={ratings}
                     onRatingChange={setRatings}
                     context={'surveyPage'}
+                    attentionCheckLevel={attentionCheckLevel}
                 />
                 <ActionButtons
                     onUseGpt={() => {

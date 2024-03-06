@@ -2,12 +2,12 @@ import React from 'react';
 import '../assets/MCQVisualization.css';
 import mcqData from '../assets/data/multiple_choices.json';
 
-function MCQVisualization({ iteration }) {
+function MCQVisualization({ iteration, imageId }) {
     // Fetch the data for the current iteration
-    const mcqItem = mcqData.find(item => item.id === iteration);
+    const mcqItem = mcqData.find(item => item.id === imageId);
     const imageUrl = mcqItem ? mcqItem.image : ''; // Fallback to an empty string if not found
 
-    console.log('imageUrl:', imageUrl);
+    console.log('imageID:', imageId);
 
     return (
         <div className="mcq-visualization">

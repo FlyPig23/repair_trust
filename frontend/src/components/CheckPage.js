@@ -13,8 +13,17 @@ function CheckPage({ batch, userSessionId }) {
     });
     const [repairType, setRepairType] = useState('');
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const [allRatingsProvided, setAllRatingsProvided] = useState(false);
 
-    const allRatingsProvided = Object.values(ratings).every(rating => rating !== null);
+    useEffect(() => {
+        // Check if all ratings are provided to decide if the modal should be shown
+        const provided = Object.values(ratings).every(rating => rating !== null);
+        setAllRatingsProvided(provided);
+
+        if (provided && repairType !== 'control' && batch === 'Repair') {
+            setIsModalOpen(true); // Open modal only if all ratings are provided and the batch is 'Repair'
+        }
+    }, [ratings, repairType, batch]);
 
     const repairPolicies = {
         ability: "Sorry, we must apologize for the recent inaccuracies in the AI responses. " +
@@ -32,10 +41,9 @@ function CheckPage({ batch, userSessionId }) {
     useEffect(() => {
         // Only randomly decide the repair type when transitioning to the "Repair" batch
         if (batch === 'Repair') {
-            const repairTypes = ['ability', 'integrity', 'benevolence'];
+            const repairTypes = ['ability', 'integrity', 'benevolence', 'control'];
             const randomType = repairTypes[Math.floor(Math.random() * repairTypes.length)];
             setRepairType(randomType);
-            setIsModalOpen(true);
         }
     }, [batch]);
 
@@ -76,6 +84,9 @@ function CheckPage({ batch, userSessionId }) {
             case 'Repair':
                 navigate('/survey/3/1');
                 break;
+            case 'Post':
+                navigate('/mcq-instruction');
+                break;
             default:
                 navigate('/');
         }
@@ -84,16 +95,24 @@ function CheckPage({ batch, userSessionId }) {
     // Display different information based on the batch type
     const batchInfo = {
         'Pre': {
-            title: "Pre 1st Batch Check",
-            description: "You are about to start to analyze the first batch of data visualizations. Please ensure you are ready to proceed.",
+            title: "Initial Trust Level Check Form",
+            description: "You are about to start to analyze the first batch of data visualizations. Please rate your " +
+                "initial trust level towards the AI system and ensure you are ready to proceed.",
         },
         'Destroy': {
-            title: "Pre 2nd Batch Check",
-            description: "You are about to start to analyze the second batch of data visualizations. Please ensure you are ready to proceed.",
+            title: "Trust Level Check Form",
+            description: "You are about to start to analyze the second batch of data visualizations. Please rate your " +
+                "current trust level towards the AI system and ensure you are ready to proceed."
         },
         'Repair': {
-            title: "Pre 3rd Batch Check",
-            description: "You are about to start to analyze the third batch of data visualizations. Please ensure you are ready to proceed."
+            title: "Trust Level Check Form",
+            description: "You are about to start to analyze the third batch of data visualizations. Please rate your " +
+                "current trust level towards the AI system and ensure you are ready to proceed."
+        },
+        'Post': {
+            title: "Final Trust Level Check Form",
+            description: "You have completed the analysis of the data visualizations and the interaction with the AI system. " +
+                "Please rate your final trust level towards this AI system and get ready to proceed to the next step."
         }
     };
 

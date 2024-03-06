@@ -18,6 +18,8 @@ import ThankYouPage from './components/ThankYouPage';
 function App() {
     const [userSessionId, setUserSessionId] = useState(null);
     const [group, setGroup] = useState('');
+    const [surveyOrderArray, setSurveyOrderArray] = useState([]);
+    const [mcqOrderArray, setMcqOrderArray] = useState([]);
 
     // Function to randomly assign a group
     useEffect(() => {
@@ -28,7 +30,29 @@ function App() {
             setGroup(randomGroup);
         };
 
+        const generateRandomSurveyOrderArray = () => {
+            let array = Array.from({ length: 15 }, (_, i) => i + 1);
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]]; // Swap elements
+            }
+            setSurveyOrderArray(array);
+            console.log(array);
+        };
+
+        const generateRandomMCQOrderArray = () => {
+            let array = Array.from({ length: 12 }, (_, i) => i + 1);
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]]; // Swap elements
+            }
+            setMcqOrderArray(array);
+            console.log(array);
+        };
+
         assignGroup();
+        generateRandomSurveyOrderArray();
+        generateRandomMCQOrderArray();
     }, []);
 
     return (
@@ -44,7 +68,11 @@ function App() {
                     <Route
                         key={`pre-${index}`}
                         path={`/survey/1/${index + 1}`}
-                        element={<SurveyPage iteration={index + 1} userSessionId={userSessionId} group={group} />}
+                        element={<SurveyPage
+                            iteration={index + 1}
+                            userSessionId={userSessionId}
+                            group={group}
+                            imageId={surveyOrderArray[index]} />}
                     />
                 ))}
 
@@ -54,7 +82,12 @@ function App() {
                     <Route
                         key={`destroy-${index}`}
                         path={`/survey/2/${index + 1}`}
-                        element={<SurveyPage iteration={index + 6} userSessionId={userSessionId} group={group} />}
+                        element={<SurveyPage
+                            iteration={index + 6}
+                            userSessionId={userSessionId}
+                            group={group}
+                            imageId={surveyOrderArray[index + 5]}
+                        />}
                     />
                 ))}
 
@@ -64,9 +97,16 @@ function App() {
                     <Route
                         key={`repair-${index}`}
                         path={`/survey/3/${index + 1}`}
-                        element={<SurveyPage iteration={index + 11} userSessionId={userSessionId} group={group} />}
+                        element={<SurveyPage
+                            iteration={index + 11}
+                            userSessionId={userSessionId}
+                            group={group}
+                            imageId={surveyOrderArray[index + 10]}
+                        />}
                     />
                 ))}
+
+                <Route path="/check-4" element={<CheckPage batch="Post" userSessionId={userSessionId} />} />
 
                 <Route path="/mcq-instruction" element={<MCQInstruction />} />
                 {[...Array(12)].map((_, index) => (
@@ -76,11 +116,12 @@ function App() {
                         element={ <MCQPage
                             iteration={index + 1}
                             userSessionId={userSessionId}
+                            imageId={mcqOrderArray[index]}
                         /> }
                     />
                 ))}
 
-                <Route path="/thank-you" element={<ThankYouPage />} />
+                <Route path="/thank-you" element={<ThankYouPage userSessionId={userSessionId} />} />
             </Routes>
         </Router>
     );

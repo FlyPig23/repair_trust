@@ -33,7 +33,7 @@ function ActionButtons({ onUseGpt, onEditGpt, onWriteOwn, handleSubmitSurvey, it
 
         // Special case for the last iteration of the last batch
         if (iteration === 15) {
-            nextPath = '/mcq-instruction';
+            nextPath = '/check-4';
         }
 
         navigate(nextPath);

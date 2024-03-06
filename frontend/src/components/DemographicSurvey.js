@@ -12,16 +12,28 @@ function DemographicSurvey({ userSessionId }) {
         familiarity: '',
         aiExperience: '',
         aiTrust: '',
+        employmentStatus: '',
+        industryRelated: '',
         comments: ''
     });
 
-    const ages = ['18-24', '25-34', '35-44', '45-54', '55-64', '65+'];
+    // Generate ages 18 to 65
+    const ages = Array.from({ length: 48 }, (_, i) => (18 + i).toString());
+
     const educations = [
         'High School Diploma / GED',
         'Associate Degree',
         'Bachelors Degree',
         'Masters Degree',
         'Doctorate Degree'
+    ];
+
+    const employmentStatuses = [
+        'Full-time',
+        'Part-time',
+        'Unemployed',
+        'Retired',
+        'Prefer not to say'
     ];
 
     useEffect(() => {
@@ -110,6 +122,26 @@ function DemographicSurvey({ userSessionId }) {
                             {educations.map(education => (
                                 <option key={education} value={education}>{education}</option>
                             ))}
+                        </select>
+                    </div>
+
+                    <div className="form-group">
+                        <label>What is your current employment status?</label>
+                        <select name="employmentStatus" value={formData.employmentStatus} onChange={handleInputChange}>
+                            <option value="" disabled>Select your employment status</option>
+                            {employmentStatuses.map(status => (
+                                <option key={status} value={status}>{status}</option>
+                            ))}
+                        </select>
+                    </div>
+
+                    <div className="form-group">
+                        <label>Is your current work or field of study related to data analysis, visualization, or artificial intelligence?</label>
+                        <select name="industryRelated" value={formData.industryRelated} onChange={handleInputChange}>
+                            <option value="" disabled>Select an option</option>
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
+                            <option value="unsure">Unsure</option>
                         </select>
                     </div>
 

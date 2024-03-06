@@ -14,7 +14,7 @@ function MultipleChoiceQuestions({ questionNumber, userSessionId }) {
         if (nextQuestionNumber <= mcqData.length) {
             navigate(`/mcq/${nextQuestionNumber}`);
         } else {
-            navigate('/demographic-survey');
+            navigate('/thank-you');
         }
     }, [navigate, questionNumber]);
 
@@ -46,10 +46,12 @@ function MultipleChoiceQuestions({ questionNumber, userSessionId }) {
         // Compare the user's choice with the correct answer
         const isCorrect = mcqItem && choice === mcqItem.correctAnswer;
 
+        const questionText = mcqItem ? mcqItem.questionText : '';
+
         // Prepare the data to be sent to the backend
         const answerData = {
             userSessionId,
-            questionNumber,
+            questionText,
             choice,
             isCorrect,
             responseTime

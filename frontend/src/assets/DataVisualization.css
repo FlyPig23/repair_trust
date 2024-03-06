@@ -1,25 +1,48 @@
-h2 {
-    margin-top: 0; /* Remove default top margin */
-    margin-bottom: 20px; /* Add space between the title and the image */
-    text-align: center; /* Center-align the title text */
-}
+/*h2 {*/
+/*    margin-top: 0; !* Remove default top margin *!*/
+/*    margin-bottom: 20px; !* Add space between the title and the image *!*/
+/*    text-align: center; !* Center-align the title text *!*/
+/*}*/
+
+/*.data-visualization {*/
+/*    display: flex; !* Use flexbox for layout *!*/
+/*    flex-direction: column; !* Arrange items vertically *!*/
+/*    align-items: center; !* Center the items horizontally *!*/
+/*    margin: 0 auto; !* Center the component in its container *!*/
+/*    margin-bottom: 20px; !* Add space between components *!*/
+/*    padding: 20px; !* Add padding around the content *!*/
+/*    background-color: #f9f9f9; !* Add background color *!*/
+/*    border-radius: 5px; !* Round the corners *!*/
+/*    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); !* Add shadow for depth *!*/
+/*    max-width: 40vw; !* Limit the width of the component *!*/
+/*    width: 100%; !* Use full width of the container *!*/
+/*}*/
+
+/*.data-visualization img {*/
+/*    max-width: 100%; !* Ensure the image is responsive and doesn't overflow its container *!*/
+/*    height: auto; !* Maintain aspect ratio *!*/
+/*    border-radius: 5px; !* Round the corners of the image *!*/
+/*}*/
 
 .data-visualization {
-    display: flex; /* Use flexbox for layout */
-    flex-direction: column; /* Arrange items vertically */
-    align-items: center; /* Center the items horizontally */
-    margin: 0 auto; /* Center the component in its container */
-    margin-bottom: 20px; /* Add space between components */
-    padding: 20px; /* Add padding around the content */
-    background-color: #f9f9f9; /* Add background color */
-    border-radius: 5px; /* Round the corners */
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
-    max-width: 700px; /* Limit the maximum width */
-    width: 100%; /* Use full width of the container */
+    width: 100%; /* Ensures the component fills the parent (left-panel), adhering to the 50% screen width requirement */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center; /* Centers the text for a clean look */
+    padding: 20px; /* Adds some padding inside the data-visualization for spacing */
+    box-sizing: border-box; /* Ensures padding does not affect the total width */
+}
+
+.data-visualization h2 {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: #000;
+    margin-bottom: 20px; /* Adds space between the title and the image */
 }
 
 .data-visualization img {
-    max-width: 100%; /* Ensure the image is responsive and doesn't overflow its container */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 5px; /* Round the corners of the image */
+    max-width: 100%; /* Ensures the image never exceeds the width of the .data-visualization (and thus the left panel) */
+    height: auto; /* Maintains aspect ratio */
+    border-radius: 10px; /* Adds the iOS-style rounded corners to the image */
 }

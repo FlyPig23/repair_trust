@@ -1,21 +1,27 @@
-/* ThankYouPage.css */
 .thank-you-container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    height: 100vh;
-    text-align: center;
-    padding: 20px;
+    justify-content: center;
+    height: 90vh;
+    min-height: 700px; /* Minimum height for readability */
+    padding: 10px 20px;
+    background-color: #fff; /* Light background for a clean look */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    border-radius: 20px; /* Rounded corners */
+    margin: 20px auto;
+    max-width: 800px; /* Max width for readability */
 }
 
 .thank-you-container h1 {
-    font-size: 2rem;
-    color: #333;
     margin-bottom: 20px;
+    text-align: center;
+    color: #007bff; /* iOS blue for headers */
 }
 
 .thank-you-container p {
-    font-size: 1.2rem;
-    color: #666;
+    font-size: 16px; /* Slightly smaller font size for iOS-like text */
+    line-height: 1.6;
+    text-align: justify;
+    margin-bottom: 20px; /* Reduced margin */
 }
