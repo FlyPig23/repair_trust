@@ -1,0 +1,21 @@
+.app-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.left-panel {
+    width: 60%; /* Adjusted to take no more than 60% of the container width */
+}
+
+.right-panel {
+    width: calc(40% - 20px); /* Adjusted to fill the remaining space minus the gap */
+}
+
+/* Ensure that the panels do not collapse into a single column on smaller screens */
+@media (max-width: 768px) {
+    .left-panel, .right-panel {
+        width: 100%;
+        margin-bottom: 20px; /* Adds some space between the panels when they're stacked */
+    }
+}
