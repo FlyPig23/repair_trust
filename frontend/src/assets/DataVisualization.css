@@ -43,6 +43,7 @@
 
 .data-visualization img {
     max-width: 100%; /* Ensures the image never exceeds the width of the .data-visualization (and thus the left panel) */
+    max-height: 80vh;
     height: auto; /* Maintains aspect ratio */
     border-radius: 10px; /* Adds the iOS-style rounded corners to the image */
 }

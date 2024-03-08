@@ -55,11 +55,16 @@ function SurveyInstruction() {
                 <li>After each batch, you will be asked to rate your trust level in the AI system's ability based on
                     your experience with the AI system.
                 </li>
-                <li>Each turn will require you to analyze the visualization, then evaluate an AI generated response and
-                    provide a final response.
+                <li>Each turn will require you to analyze the visualization, then evaluate an AI generated response.
                 </li>
-                <li>Answer to the best of your ability. You cannot skip questions.</li>
+                <li>After evaluating the AI response, you can rate your trust in the AI system's ability
+                    based on the response.
+                </li>
+                <li>You also have the option to determine whether you would use the AI system's response, or edit it
+                    before using it, or write a completely new response.
+                </li>
                 <li>Write no more than 3 sentences for each response if you choose to write your own.</li>
+                <li>Answer to the best of your ability. You cannot skip questions.</li>
             </ul>
             <button onClick={handleStartSurvey}>Start Survey</button>
         </div>

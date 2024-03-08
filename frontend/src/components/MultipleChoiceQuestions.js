@@ -3,9 +3,9 @@ import { useNavigate } from 'react-router-dom';
 import mcqData from '../assets/data/multiple_choices.json';
 import '../assets/MultipleChoiceQuestions.css';
 
-function MultipleChoiceQuestions({ questionNumber, userSessionId }) {
+function MultipleChoiceQuestions({ questionNumber, userSessionId, imageId }) {
     const navigate = useNavigate();
-    const mcqItem = mcqData.find(item => item.id === questionNumber);
+    const mcqItem = mcqData.find(item => item.id === imageId);
     const [timeLeft, setTimeLeft] = useState(25);
     const [startTime, setStartTime] = useState(Date.now());
 
@@ -18,41 +18,17 @@ function MultipleChoiceQuestions({ questionNumber, userSessionId }) {
         }
     }, [navigate, questionNumber]);
 
-    useEffect(() => {
-        // Reset the timer and start time for each new question
-        setTimeLeft(25);
-        setStartTime(Date.now());
-
-        // Set up the timer
-        const timer = setInterval(() => {
-            setTimeLeft((prevTimeLeft) => {
-                if (prevTimeLeft === 1) {
-                    clearInterval(timer); // Clear the timer when it reaches 0
-                    handleNavigationAfterAnswer();
-                }
-                return prevTimeLeft - 1; // Decrease the timer
-            });
-        }, 1000); // Run every second
-
-        // Clean up
-        return () => clearInterval(timer);
-    }, [questionNumber, handleNavigationAfterAnswer]);
-
-
-    const handleChoice = async (choice) => {
+    const handleChoice = useCallback(async (choice, isTimeUp = false) => {
         const endTime = Date.now();
-        const responseTime = endTime - startTime;
+        const responseTime = isTimeUp ? 25 * 1000 : endTime - startTime; // If time is up, use full duration as response time
 
-        // Compare the user's choice with the correct answer
         const isCorrect = mcqItem && choice === mcqItem.correctAnswer;
-
         const questionText = mcqItem ? mcqItem.questionText : '';
 
-        // Prepare the data to be sent to the backend
         const answerData = {
             userSessionId,
             questionText,
-            choice,
+            choice: isTimeUp ? 'Time Up' : choice,
             isCorrect,
             responseTime
         };
@@ -68,22 +44,42 @@ function MultipleChoiceQuestions({ questionNumber, userSessionId }) {
 
             if (response.ok) {
                 console.log('Answer submitted successfully');
-
                 // Navigate to the next question or show a completion message
-                const nextQuestionNumber = questionNumber + 1;
-                if (nextQuestionNumber <= mcqData.length) {
-                    navigate(`/mcq/${nextQuestionNumber}`);
-                } else {
-                    // Navigate to the "thank you" page
-                    navigate('/thank-you');
-                }
+                handleNavigationAfterAnswer();
             } else {
                 throw new Error('Failed to submit answer');
             }
         } catch (error) {
             console.error("Error submitting answer:", error);
+        } finally {
+            if (isTimeUp) {
+                // Ensure navigation occurs even if time is up
+                handleNavigationAfterAnswer();
+            }
         }
-    };
+    }, [mcqItem, startTime, userSessionId, handleNavigationAfterAnswer]);
+
+    useEffect(() => {
+        // Reset the timer and start time for each new question
+        setTimeLeft(25);
+        setStartTime(Date.now());
+
+        // Set up the timer
+        const timer = setInterval(() => {
+            setTimeLeft(prevTimeLeft => {
+                const newTimeLeft = prevTimeLeft - 1;
+                if (newTimeLeft === 0) {
+                    clearInterval(timer); // Clear the timer when it reaches 0
+                    handleChoice('Time Up', true); // Indicate time is up and submit data, pass true to indicate it's a time-up submission
+                }
+                return newTimeLeft; // Decrease the timer
+            });
+        }, 1000); // Run every second
+
+        // Clean up
+        return () => clearInterval(timer);
+    }, [questionNumber, handleChoice]);
+
 
     return (
         <div className="mcq-container">

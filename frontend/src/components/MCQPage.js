@@ -36,6 +36,7 @@ function MCQPage({ iteration, userSessionId, imageId }) {
                 <MultipleChoiceQuestions
                     questionNumber={iteration}
                     userSessionId={userSessionId}
+                    imageId={imageId}
                 />
             </div>
         </div>
