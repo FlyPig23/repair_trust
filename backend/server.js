@@ -6,7 +6,7 @@ const path = require('path');
 const crypto = require('crypto');
 
 const app = express();
-const port = 32774; //replacing it by the server port 
+const port = 3000; //replacing it by the server port
 const uri = "mongodb://localhost:27017";
 const client = new MongoClient(uri);
 

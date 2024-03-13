@@ -14,6 +14,7 @@ import SurveyInstruction from './components/SurveyInstruction';
 import MCQInstruction from './components/MCQInstruction';
 import CheckPage from './components/CheckPage';
 import ThankYouPage from './components/ThankYouPage';
+import ColorBlindTest from './components/ColorBlindTest';
 
 function App() {
     const [userSessionId, setUserSessionId] = useState(null);
@@ -59,6 +60,7 @@ function App() {
         <Router>
             <Routes>
                 <Route path="/" element={<ConsentPage setUserSessionId={setUserSessionId} group={group} />} />
+                <Route path="/color-blind-test" element={<ColorBlindTest setUserSessionId={setUserSessionId} />} />
                 <Route path="/demographic-survey" element={<DemographicSurvey userSessionId={userSessionId} />} />
                 <Route path="/survey-instruction" element={<SurveyInstruction />} />
 

@@ -32,7 +32,7 @@ function ConsentPage({ setUserSessionId, group}) {
             if (response.ok) {
                 const result = await response.json();
                 setUserSessionId(result.userSessionId); // Set the user session ID in the App component
-                navigate('/demographic-survey'); // Navigate to the demographic survey page
+                navigate('/color-blind-test'); // Navigate to the color-blind test page
             } else {
                 throw new Error('Failed to submit consent agreement');
             }

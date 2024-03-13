@@ -8,7 +8,6 @@ function DemographicSurvey({ userSessionId }) {
         age: '',
         gender: '',
         education: '',
-        colorBlind: '',
         familiarity: '',
         aiExperience: '',
         aiTrust: '',
@@ -65,7 +64,7 @@ function DemographicSurvey({ userSessionId }) {
         }));
     };
 
-    const isFormComplete = formData.age && formData.gender && formData.education && formData.colorBlind && formData.familiarity && formData.aiExperience && formData.aiTrust;
+    const isFormComplete = formData.age && formData.gender && formData.education && formData.familiarity && formData.aiExperience && formData.aiTrust;
 
     const handleDemographicSurveySubmit = async (event) => {
         event.preventDefault();
@@ -142,16 +141,6 @@ function DemographicSurvey({ userSessionId }) {
                             <option value="yes">Yes</option>
                             <option value="no">No</option>
                             <option value="unsure">Unsure</option>
-                        </select>
-                    </div>
-
-                    <div className="form-group">
-                        <label>Are you color-blind?</label>
-                        <select name="colorBlind" value={formData.colorBlind} onChange={handleInputChange}>
-                            <option value="" disabled>Select an option</option>
-                            <option value="yes">Yes</option>
-                            <option value="no">No</option>
-                            <option value="maybe">I do not wish to disclose.</option>
                         </select>
                     </div>
 
