@@ -1,0 +1,345 @@
+{
+  "userSessionId": "dd6b0ccec71f4d4077074206a0365404",
+  "consent": {
+    "consentAgreed": true,
+    "group": "cbc",
+    "ipAddress": "107.190.241.240"
+  },
+  "demographicData": [
+    {
+      "age": "24",
+      "gender": "male",
+      "education": "Bachelors Degree",
+      "familiarity": "very_familiar",
+      "aiExperience": "very_familiar",
+      "aiTrust": "trust",
+      "employmentStatus": "Part-time",
+      "industryRelated": "yes",
+      "comments": ""
+    }
+  ],
+  "checkPageRatings": [
+    {
+      "batch": "Pre",
+      "ratings": {
+        "quality": 5,
+        "factual": 5,
+        "trust": 5
+      },
+      "repairType": ""
+    },
+    {
+      "batch": "Destroy",
+      "ratings": {
+        "quality": 5,
+        "factual": 5,
+        "trust": 5
+      },
+      "repairType": ""
+    },
+    {
+      "batch": "Repair",
+      "ratings": {
+        "quality": 3,
+        "factual": 3,
+        "trust": 3
+      },
+      "repairType": "control"
+    },
+    {
+      "batch": "Post",
+      "ratings": {
+        "quality": 4,
+        "factual": 4,
+        "trust": 4
+      },
+      "repairType": ""
+    }
+  ],
+  "surveys": [
+    {
+      "surveyNumber": 1,
+      "imageIndex": 3,
+      "gptResponse": "The image shows a line graph comparing the rates of drug overdose deaths per 100,000 residents between San Francisco and the United States over time, from 2010 to 2023. Two lines are plotted: a sharp, rising line for San Francisco, and a more gradual rising line for the United States. The data illustrates that while both rates have increased, San Francisco's rate has surged dramatically, especially from around 2018, far outpacing the national average. The 12-month rolling averages are shown, and it is noted that the drug death numbers for 2023 are provisional. The source of the data is the CDC.",
+      "ratings": {
+        "quality": 5,
+        "factual": 5,
+        "trust": 5,
+        "attentionCheck": 4
+      },
+      "attentionCheckLevel": 4,
+      "actionChoice": "Use GPT Response",
+      "timeSpent": 22640
+    },
+    {
+      "surveyNumber": 2,
+      "imageIndex": 13,
+      "gptResponse": "The image is a distribution chart of the nation's wealth, segmented by generation. It shows that Baby Boomers, born between 1946-64, hold $78.3 trillion in assets, which is about half of the nation's total wealth at $140 trillion. Their assets are diversified across equities, real estate, private businesses, and other assets. Other generations such as Generation X, the Silent Generation, and Millennials also hold significant portions of wealth, each with their own asset distributions. This information is sourced from the Federal Reserve.",
+      "ratings": {
+        "quality": 5,
+        "factual": 5,
+        "trust": 5,
+        "attentionCheck": 1
+      },
+      "attentionCheckLevel": 1,
+      "actionChoice": "Use GPT Response",
+      "timeSpent": 12819
+    },
+    {
+      "surveyNumber": 3,
+      "imageIndex": 12,
+      "gptResponse": "The image depicts a choropleth map of the United States, showing the temperature deviations from October 1 through March 31, compared with the 2008-2022 average for the same period. Areas in blue are cooler than average, with variations up to -6 degrees Fahrenheit, while areas in orange are warmer, showing increases up to +6 degrees Fahrenheit. The map indicates that most of the western US has been cooler than average, while the eastern part is predominantly warmer. Data is sourced from the PRISM Climate Group at Oregon State University and accessed via Climate Engine. The map notes that data for Alaska and Hawaii is not available.",
+      "ratings": {
+        "quality": 5,
+        "factual": 5,
+        "trust": 5,
+        "attentionCheck": 2
+      },
+      "attentionCheckLevel": 2,
+      "actionChoice": "Use GPT Response",
+      "timeSpent": 8199
+    },
+    {
+      "surveyNumber": 4,
+      "imageIndex": 10,
+      "gptResponse": "The image is a graphical representation of the biggest domestic weekend box office grosses, not adjusted for inflation. It showcases the top-grossing movies on their opening weekend and their respective earnings and share of the weekend's total box office. 'Avengers: Endgame' from April 26-28, 2019, has the highest earnings with $357 million, accounting for 89 percent of that weekend's total. 'Barbie' from July 21-23, 2023, is notable with $162 million, taking 52 percent of the weekend total. The data is sourced from Box Office Mojo.",
+      "ratings": {
+        "quality": 5,
+        "factual": 5,
+        "trust": 5,
+        "attentionCheck": 3
+      },
+      "attentionCheckLevel": 3,
+      "actionChoice": "Use GPT Response",
+      "timeSpent": 6371
+    },
+    {
+      "surveyNumber": 5,
+      "imageIndex": 2,
+      "gptResponse": "This image displays a choropleth map of the United States, showing where migrant children were sent to live with non-parent sponsors. The map uses various shades of blue to represent the number of children per 100,000 residents in each area, with darker shades indicating higher numbers. The map includes a legend that ranges from 0 to 30 children per 100,000 residents. The data seems to be more concentrated in certain areas, indicating a higher number of migrant children placed with sponsors in these locations.",
+      "ratings": {
+        "quality": 5,
+        "factual": 5,
+        "trust": 5,
+        "attentionCheck": 3
+      },
+      "attentionCheckLevel": 3,
+      "actionChoice": "Use GPT Response",
+      "timeSpent": 4710
+    },
+    {
+      "surveyNumber": 6,
+      "imageIndex": 8,
+      "gptResponse": "Write 1",
+      "ratings": {
+        "quality": 1,
+        "factual": 1,
+        "trust": 1,
+        "attentionCheck": 1
+      },
+      "attentionCheckLevel": 1,
+      "actionChoice": "Write My Own Response",
+      "timeSpent": 166704
+    },
+    {
+      "surveyNumber": 7,
+      "imageIndex": 1,
+      "gptResponse": "Edit......The image is a world map indicating the immediate population growth in various countries. The map shows the total population size in different countries as of 2023. The circles in orange indicate countries with the highest populations, while the green circles show countries with smaller populations. Notable countries with large populations include USA with 3 million and India with 1 million. Conversely, countries like China and Spain show a population decrease, with figures such as -216 million and -147 million respectively.",
+      "ratings": {
+        "quality": 1,
+        "factual": 1,
+        "trust": 1,
+        "attentionCheck": 3
+      },
+      "attentionCheckLevel": 3,
+      "actionChoice": "Edit GPT Response",
+      "timeSpent": 89377
+    },
+    {
+      "surveyNumber": 8,
+      "imageIndex": 9,
+      "gptResponse": "Write 2",
+      "ratings": {
+        "quality": 1,
+        "factual": 1,
+        "trust": 1,
+        "attentionCheck": 4
+      },
+      "attentionCheckLevel": 4,
+      "actionChoice": "Write My Own Response",
+      "timeSpent": 13447
+    },
+    {
+      "surveyNumber": 9,
+      "imageIndex": 5,
+      "gptResponse": "Write 3",
+      "ratings": {
+        "quality": 1,
+        "factual": 1,
+        "trust": 1,
+        "attentionCheck": 1
+      },
+      "attentionCheckLevel": 1,
+      "actionChoice": "Write My Own Response",
+      "timeSpent": 9340
+    },
+    {
+      "surveyNumber": 10,
+      "imageIndex": 4,
+      "gptResponse": "Write 4",
+      "ratings": {
+        "quality": 1,
+        "factual": 1,
+        "trust": 1,
+        "attentionCheck": 1
+      },
+      "attentionCheckLevel": 1,
+      "actionChoice": "Write My Own Response",
+      "timeSpent": 8206
+    },
+    {
+      "surveyNumber": 11,
+      "imageIndex": 11,
+      "gptResponse": "The image shows a bar chart indicating the payout to U.S. players based on their finish at the World Cup. The payouts increase progressively from $298,400 per player for the group stage to $459,800 for champions. On the right, a comparison is made with 'Other players' payouts, starting at $30,000 for the group stage and going up to $270,000 for champions. The chart is color-coded, with U.S. players in red and other players in gray, emphasizing the difference in payouts. The data is sourced from FIFA and the U.S. Women’s National Team Players Association and is noted to be rounded.",
+      "ratings": {
+        "quality": 5,
+        "factual": 5,
+        "trust": 5,
+        "attentionCheck": 4
+      },
+      "attentionCheckLevel": 4,
+      "actionChoice": "Use GPT Response",
+      "timeSpent": 60432
+    },
+    {
+      "surveyNumber": 12,
+      "imageIndex": 15,
+      "gptResponse": "The image is a quadrant chart that assesses the current state of economic conditions related to jobs, income, consumers, and production. The horizontal axis indicates if conditions are currently good or bad, while the vertical axis shows if conditions are getting better or worse. Categories such as 'Inflation' and 'Consumer sentiment' are classified as bad but getting better. 'Payroll employment' and 'Industrial production' are among those listed as good and getting better. Conversely, 'Job openings' and 'Building permits' are perceived as good but getting worse. This visual helps to quickly understand the complex interplay between different economic indicators.",
+      "ratings": {
+        "quality": 5,
+        "factual": 5,
+        "trust": 5,
+        "attentionCheck": 1
+      },
+      "attentionCheckLevel": 1,
+      "actionChoice": "Use GPT Response",
+      "timeSpent": 5175
+    },
+    {
+      "surveyNumber": 13,
+      "imageIndex": 14,
+      "gptResponse": "The image is a line graph that traces the career point totals of the top 250 scorers in NBA history. It shows the cumulative points over time, with LeBron James recently surpassing Kareem Abdul-Jabbar's record, setting a new high. Current players are highlighted in blue, with LeBron James leading at 38,390 points as of 2023. Historical players like Wilt Chamberlain, Karl Malone, and Michael Jordan are also included, with their final career totals marked. The source of the data is Basketball-reference.com, and the data is up to February 7.",
+      "ratings": {
+        "quality": 5,
+        "factual": 5,
+        "trust": 5,
+        "attentionCheck": 1
+      },
+      "attentionCheckLevel": 1,
+      "actionChoice": "Use GPT Response",
+      "timeSpent": 6832
+    },
+    {
+      "surveyNumber": 14,
+      "imageIndex": 7,
+      "gptResponse": "The image is a bar chart depicting the top relative rating performances for various NFL teams from 2020 through 2023. It highlights the teams and their respective seasons that had the highest ratings advantage over similar games during this period. The 49ers in 2023 top the chart with a 34% ratings advantage, followed by the Eagles in 2023 with 26%. Notably, the 'Chiefs with Swift' in 2023 is highlighted in red, indicating a special event or combination, with a 25% advantage. The data includes only games played on their namesake day for teams with at least four such games in a season, except the Chiefs and Swift combo. The source of the ratings is Nielsen viewership estimates via Sports Media Watch.",
+      "ratings": {
+        "quality": 5,
+        "factual": 5,
+        "trust": 5,
+        "attentionCheck": 4
+      },
+      "attentionCheckLevel": 4,
+      "actionChoice": "Use GPT Response",
+      "timeSpent": 5290
+    },
+    {
+      "surveyNumber": 15,
+      "imageIndex": 6,
+      "gptResponse": "The image is a horizontal bar chart displaying the age demographics of individuals facing eviction. The chart compares the share of all renters with the share of those facing eviction, indicating that young children (0-4 years old) make up a larger proportion of those facing eviction (12%) compared to their share among all renters (9%). The data, covering 2007-2016, is sourced from a comprehensive demographic profile by researchers at Princeton, Rutgers, and the U.S. Census Bureau.",
+      "ratings": {
+        "quality": 5,
+        "factual": 5,
+        "trust": 5,
+        "attentionCheck": 1
+      },
+      "attentionCheckLevel": 1,
+      "actionChoice": "Use GPT Response",
+      "timeSpent": 4779
+    }
+  ],
+  "mcqAnswers": [
+    {
+      "questionText": "What was the average price of pound of coffee beans in October 2019?",
+      "choice": "$0.63",
+      "isCorrect": false,
+      "responseTime": 846
+    },
+    {
+      "questionText": "What is the approximate global smartphone market share of Samsung?",
+      "choice": "25.3%",
+      "isCorrect": false,
+      "responseTime": 888
+    },
+    {
+      "questionText": "What was the ratio of girls named 'Isla' to girls named 'Amelia' in 2012 in the UK?",
+      "choice": "1 to 3",
+      "isCorrect": false,
+      "responseTime": 342
+    },
+    {
+      "questionText": "What is the average internet speed in Japan?",
+      "choice": "40.51 Mbps",
+      "isCorrect": true,
+      "responseTime": 493
+    },
+    {
+      "questionText": "Which city's metro system has the largest number of stations?",
+      "choice": "London",
+      "isCorrect": false,
+      "responseTime": 359
+    },
+    {
+      "questionText": "There is a negative linear relationship between the height and the weight of the 85 males.",
+      "choice": "Skip",
+      "isCorrect": false,
+      "responseTime": 943
+    },
+    {
+      "questionText": "What was the price of a barrel of oil in February 2020?",
+      "choice": "$47.02",
+      "isCorrect": false,
+      "responseTime": 404
+    },
+    {
+      "questionText": "What distance have customers traveled in the taxi the most?",
+      "choice": "50 - 60 KM",
+      "isCorrect": false,
+      "responseTime": 926
+    },
+    {
+      "questionText": "In 2020, the unemployment rate for Washington (WA) was higher than that of Wisconsin (WI).",
+      "choice": "Time Up",
+      "isCorrect": false,
+      "responseTime": 25000
+    },
+    {
+      "questionText": "Which country has the lowest proportion of Gold medals?",
+      "choice": "Time Up",
+      "isCorrect": false,
+      "responseTime": 25000
+    },
+    {
+      "questionText": "What is the cost of peanuts in Seoul?",
+      "choice": "Time Up",
+      "isCorrect": false,
+      "responseTime": 25000
+    },
+    {
+      "questionText": "eBay is nested in the Software category.",
+      "choice": "Time Up",
+      "isCorrect": false,
+      "responseTime": 25000
+    }
+  ]
+}
