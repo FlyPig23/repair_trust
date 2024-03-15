@@ -70,7 +70,7 @@ function DemographicSurvey({ userSessionId }) {
         event.preventDefault();
         const demographicData = formData; // Get the demographic data from the form state
         try {
-            const response = await fetch('http://localhost:3000/submit-demographic', {
+            const response = await fetch('http://localhost:32774/submit-demographic', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
