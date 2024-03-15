@@ -181,7 +181,7 @@ const path = require('path');
 const crypto = require('crypto');
 
 const app = express();
-const port = 32774;
+const port = 3000;
 const dataDir = path.join(__dirname, 'data');
 
 app.use(cors());
