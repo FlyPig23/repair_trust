@@ -25,10 +25,9 @@ function ConsentPage({ setUserSessionId, group}) {
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                // Assuming the server expects the consent agreement in the request.
-                // Modify as per server's requirement.
                 body: JSON.stringify(consentData),
             });
+
             if (response.ok) {
                 const result = await response.json();
                 setUserSessionId(result.userSessionId); // Set the user session ID in the App component
