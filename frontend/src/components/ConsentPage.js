@@ -20,7 +20,7 @@ function ConsentPage({ setUserSessionId, group}) {
                 ipAddress: ip, // Include the fetched IP address
             };
 
-            const response = await fetch('http://localhost:3000/submit-consent', {
+            const response = await fetch('http://localhost:32774/submit-consent', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
