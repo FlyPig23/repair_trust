@@ -34,7 +34,7 @@ function MultipleChoiceQuestions({ questionNumber, userSessionId, imageId }) {
         };
 
         try {
-            const response = await fetch('https://3.141.170.82/api/submit-answer', {
+            const response = await fetch('http://3.141.170.82/api/submit-answer', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
