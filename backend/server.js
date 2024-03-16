@@ -213,7 +213,7 @@ function readUserData(userSessionId) {
     return null; // Or handle as needed
 }
 
-app.post('/submit-consent', async (req, res) => {
+apiRouter.post('/submit-consent', async (req, res) => {
     try {
         const userSessionId = crypto.randomBytes(16).toString('hex');
         const userData = {
@@ -232,7 +232,7 @@ app.post('/submit-consent', async (req, res) => {
     }
 });
 
-app.post('/submit-checkpage', async (req, res) => {
+apiRouter.post('/submit-checkpage', async (req, res) => {
     try {
         const { userSessionId, batch, ratings, repairType } = req.body;
         const userData = readUserData(userSessionId);
@@ -245,7 +245,7 @@ app.post('/submit-checkpage', async (req, res) => {
     }
 });
 
-app.post('/submit-survey', async (req, res) => {
+apiRouter.post('/submit-survey', async (req, res) => {
     try {
         const { userSessionId, surveyNumber, imageIndex, gptResponse, ratings, attentionCheckLevel, actionChoice, timeSpent } = req.body;
         const userData = readUserData(userSessionId);
@@ -258,7 +258,7 @@ app.post('/submit-survey', async (req, res) => {
     }
 });
 
-app.post('/submit-answer', async (req, res) => {
+apiRouter.post('/submit-answer', async (req, res) => {
     try {
         const { userSessionId, questionText, choice, isCorrect, responseTime } = req.body;
         const userData = readUserData(userSessionId);
@@ -271,7 +271,7 @@ app.post('/submit-answer', async (req, res) => {
     }
 });
 
-app.post('/submit-demographic', async (req, res) => {
+apiRouter.post('/submit-demographic', async (req, res) => {
     try {
         const { userSessionId, demographicData } = req.body;
         const userData = readUserData(userSessionId);
