@@ -60,7 +60,7 @@ function CheckPage({ batch, userSessionId }) {
 
         // Before navigating, submit the ratings to the backend
         try {
-            const response = await fetch('http://3.141.170.82/api/submit-checkpage', {
+            const response = await fetch('https://3.141.170.82/api/submit-checkpage', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
