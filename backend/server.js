@@ -192,6 +192,9 @@ if (!fs.existsSync(dataDir)) {
     fs.mkdirSync(dataDir);
 }
 
+// Prefix all routes with /api
+const apiRouter = express.Router();
+
 function getUserFilePath(userSessionId) {
     return path.join(dataDir, `${userSessionId}.json`);
 }
@@ -280,6 +283,9 @@ app.post('/submit-demographic', async (req, res) => {
         res.status(500).send("Error saving demographic data");
     }
 });
+
+// Use the API router with /api prefix
+app.use('/api', apiRouter);
 
 app.listen(port, () => {
     console.log(`Server running on port ${port}`);
