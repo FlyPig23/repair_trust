@@ -129,7 +129,7 @@ function SurveyPage({ iteration, userSessionId, group, imageId }) {
 
         try {
             // Submit survey data
-            const response = await fetch('http://localhost:32774/submit-survey', {
+            const response = await fetch('http://3.141.170.82/api/submit-survey', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(surveyData),
