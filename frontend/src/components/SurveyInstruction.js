@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../assets/SurveyInstruction.css';
+import rateGuide from '../assets/images/rate_guide.png';
+import surveyGuide from '../assets/images/survey_guide.png';
 
 function SurveyInstruction() {
     const navigate = useNavigate();
@@ -66,6 +68,14 @@ function SurveyInstruction() {
                 <li>Write no more than 3 sentences for each response if you choose to write your own.</li>
                 <li>Answer to the best of your ability. You cannot skip questions.</li>
             </ul>
+            <h2>Below are detailed instructions of the upcoming survey:</h2>
+            <div className="image-container">
+                <img src={rateGuide} alt="Rate Guide Example"/>
+                <p className="image-description">Instructions on how to rate the trust level.</p>
+                <img src={surveyGuide} alt="Survey Guide Example"/>
+                <p className="image-description">Instructions on how to do the experiment.</p>
+            </div>
+            <br/>
             <button onClick={handleStartSurvey}>Start Survey</button>
         </div>
     );
