@@ -1,9 +1,8 @@
-import React, { useEffect } from 'react';
-import MCQVisualization from './MCQVisualization';
-import MultipleChoiceQuestions from './MultipleChoiceQuestions';
+import React, {useEffect} from 'react';
 import { useNavigate } from 'react-router-dom';
+import '../assets/RestPage.css';
 
-function MCQPage({ iteration, userSessionId, imageId }) {
+function RestPage({ batch }) {
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -36,20 +35,23 @@ function MCQPage({ iteration, userSessionId, imageId }) {
         };
     }, [navigate]);
 
+    const handleContinue = () => {
+        if (batch === "first") {
+            navigate('/check-2');
+        } else if (batch === "second") {
+            navigate('/check-3');
+        } else if (batch === "third") {
+            navigate('/mcq-instruction');
+        }
+    };
+
     return (
-        <div className="app-container">
-            <div className="left-panel">
-                <MCQVisualization iteration={iteration} imageId={imageId} />
-            </div>
-            <div className="right-panel">
-                <MultipleChoiceQuestions
-                    questionNumber={iteration}
-                    userSessionId={userSessionId}
-                    imageId={imageId}
-                />
-            </div>
+        <div className="rest-page-container">
+            <h2>Take a Break</h2>
+            <p>Take a break if you need one...</p>
+            <button onClick={handleContinue}>Continue</button>
         </div>
     );
 }
 
-export default MCQPage;
+export default RestPage;

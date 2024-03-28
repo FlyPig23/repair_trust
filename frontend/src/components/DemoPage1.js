@@ -1,9 +1,9 @@
-import React, { useEffect } from 'react';
-import MCQVisualization from './MCQVisualization';
-import MultipleChoiceQuestions from './MultipleChoiceQuestions';
+import React, {useEffect} from 'react';
 import { useNavigate } from 'react-router-dom';
+import surveyGuide from '../assets/images/survey_guide.png';
+import '../assets/DemoPage.css';
 
-function MCQPage({ iteration, userSessionId, imageId }) {
+function DemoPage1() {
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -36,20 +36,22 @@ function MCQPage({ iteration, userSessionId, imageId }) {
         };
     }, [navigate]);
 
+    const handleNavigate = () => {
+        navigate('/page-demo/2');
+    };
+
     return (
-        <div className="app-container">
-            <div className="left-panel">
-                <MCQVisualization iteration={iteration} imageId={imageId} />
+        <div className="image-container">
+            <h1>Instruction for the Survey Page</h1>
+            <p>Here is an example of the survey page you will see.</p>
+            <div>
+                <img src={surveyGuide} alt="Survey Guide Example"/>
+                <p className="image-description">Instructions on how to do the experiment.</p>
             </div>
-            <div className="right-panel">
-                <MultipleChoiceQuestions
-                    questionNumber={iteration}
-                    userSessionId={userSessionId}
-                    imageId={imageId}
-                />
-            </div>
+            <button onClick={handleNavigate}>Next</button>
         </div>
     );
 }
 
-export default MCQPage;
+export default DemoPage1;
+

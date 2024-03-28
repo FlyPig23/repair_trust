@@ -23,6 +23,8 @@
     transition: background-color 0.3s ease; /* Smooth background transition */
     cursor: pointer;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 .action-buttons button.selected {
@@ -52,6 +54,8 @@
     transition: background-color 0.3s ease; /* Smooth background transition */
     cursor: pointer;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    margin-top: 0;
+    margin-right: 0;
 }
 
 .next-button:hover:not(.disabled) {

@@ -16,6 +16,36 @@ function CheckPage({ batch, userSessionId }) {
     const [allRatingsProvided, setAllRatingsProvided] = useState(false);
 
     useEffect(() => {
+        // Push a new entry into the history stack
+        window.history.pushState(null, null, window.location.pathname);
+
+        // Handle back button or back navigation
+        const handleBack = (event) => {
+            event.preventDefault(); // Prevent default back behavior
+
+            // Display an alert message
+            alert("You cannot go back during the survey.");
+        };
+
+        const handleBeforeUnload = (event) => {
+            event.preventDefault();
+
+            // Display an alert message
+            alert("You cannot refresh the page during the survey.");
+        };
+
+        // Add event listener for popstate
+        window.addEventListener('popstate', handleBack);
+        window.addEventListener('beforeunload', handleBeforeUnload);
+
+        // Cleanup function
+        return () => {
+            window.removeEventListener('popstate', handleBack);
+            window.removeEventListener('beforeunload', handleBeforeUnload);
+        };
+    }, [navigate]);
+
+    useEffect(() => {
         // Check if all ratings are provided to decide if the modal should be shown
         const provided = Object.values(ratings).every(rating => rating !== null);
         setAllRatingsProvided(provided);
@@ -60,7 +90,8 @@ function CheckPage({ batch, userSessionId }) {
 
         // Before navigating, submit the ratings to the backend
         try {
-            const response = await fetch('http://13.59.246.19/api/submit-checkpage', {
+            // TODO: 13.59.246.19
+            const response = await fetch('http://localhost:32774/api/submit-checkpage', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -85,7 +116,7 @@ function CheckPage({ batch, userSessionId }) {
                 navigate('/survey/3/1');
                 break;
             case 'Post':
-                navigate('/mcq-instruction');
+                navigate('/rest-3');
                 break;
             default:
                 navigate('/');

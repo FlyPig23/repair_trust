@@ -1,8 +1,6 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../assets/SurveyInstruction.css';
-import rateGuide from '../assets/images/rate_guide.png';
-import surveyGuide from '../assets/images/survey_guide.png';
 
 function SurveyInstruction() {
     const navigate = useNavigate();
@@ -19,17 +17,26 @@ function SurveyInstruction() {
             alert("You cannot go back during the survey.");
         };
 
+        const handleBeforeUnload = (event) => {
+            event.preventDefault();
+
+            // Display an alert message
+            alert("You cannot refresh the page during the survey.");
+        };
+
         // Add event listener for popstate
         window.addEventListener('popstate', handleBack);
+        window.addEventListener('beforeunload', handleBeforeUnload);
 
         // Cleanup function
         return () => {
             window.removeEventListener('popstate', handleBack);
+            window.removeEventListener('beforeunload', handleBeforeUnload);
         };
     }, [navigate]);
 
-    const handleStartSurvey = () => {
-        navigate('/check-1');
+    const handleStartDemo = () => {
+        navigate('/page-demo/1');
     };
 
     return (
@@ -37,18 +44,12 @@ function SurveyInstruction() {
             <h1>Survey Instructions</h1>
             <h2>Welcome and Thank You for Participating in Our Research Study!</h2>
             <p>
-                A leading technology company, DataVisAI, has developed a groundbreaking Artificial Intelligence (AI)
-                system designed to simplify and enhance the way we interact with data. This initial version of the
-                system
-                is engineered to help users analyze and interpret data visualizations. DataVisAI's technology aims to
-                revolutionize data interpretation across various sectors, including healthcare, finance, education, and
-                environmental studies, by providing clear and actionable insights. The accuracy and user trust in these
-                AI-generated insights are critical to the success of the technology. <br/>
-                Your participation in this study will help us evaluate the AI system's performance and identify areas
-                for
-                improvement. You will be presented with a series of data visualizations and asked to evaluate the AI
-                system's responses. Your feedback will be invaluable in shaping the future of this technology.
-                Here's the detailed procedure for the survey: <br/>
+                In this study, you will be playing the role of a journalist at a major national newspaper tasked with
+                writing summary descriptions for data visualizations that will be included in upcoming articles. <br/>
+                We have provided AI-generate summaries to aid this process. You can choose to use of AI summaries or
+                edit them. You will be asked to give feedback on the AI’s performance with each visualization. <br/>
+                You will repeat this process for a total of <strong>15 visualizations</strong>, with a short optional
+                break between each set of 5.  <br/>
             </p>
             <ul>
                 <li>You will be given 15 data visualizations, in 3 batches of 5 visualizations each.</li>
@@ -68,15 +69,7 @@ function SurveyInstruction() {
                 <li>Write no more than 3 sentences for each response if you choose to write your own.</li>
                 <li>Answer to the best of your ability. You cannot skip questions.</li>
             </ul>
-            <h2>Below are detailed instructions of the upcoming survey:</h2>
-            <div className="image-container">
-                <img src={rateGuide} alt="Rate Guide Example"/>
-                <p className="image-description">Instructions on how to rate the trust level.</p>
-                <img src={surveyGuide} alt="Survey Guide Example"/>
-                <p className="image-description">Instructions on how to do the experiment.</p>
-            </div>
-            <br/>
-            <button onClick={handleStartSurvey}>Start Survey</button>
+            <button onClick={handleStartDemo}>Next</button>
         </div>
     );
 }

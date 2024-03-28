@@ -10,6 +10,7 @@
     border-radius: 20px;
     margin: 20px auto;
     max-width: 800px;
+    max-height: 800px;
     overflow: auto; /* Add scrollbars when content overflows */
 }
 

@@ -1,9 +1,9 @@
-import React, {useEffect, useState} from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+// import { useNavigate } from 'react-router-dom';
 import '../assets/DemographicSurvey.css';
 
-function DemographicSurvey({ userSessionId }) {
-    const navigate = useNavigate();
+function DemographicSurvey({ onSave, isDisabled }) {
+    // const navigate = useNavigate();
     const [formData, setFormData] = useState({
         age: '',
         gender: '',
@@ -18,7 +18,6 @@ function DemographicSurvey({ userSessionId }) {
 
     // Generate ages 18 to 65
     const ages = Array.from({ length: 48 }, (_, i) => (18 + i).toString());
-
     const educations = [
         'High School Diploma / GED',
         'Associate Degree',
@@ -26,7 +25,6 @@ function DemographicSurvey({ userSessionId }) {
         'Masters Degree',
         'Doctorate Degree'
     ];
-
     const employmentStatuses = [
         'Full-time',
         'Part-time',
@@ -35,64 +33,78 @@ function DemographicSurvey({ userSessionId }) {
         'Prefer not to say'
     ];
 
-    useEffect(() => {
-        // Push a new entry into the history stack
-        window.history.pushState(null, null, window.location.pathname);
-
-        // Handle back button or back navigation
-        const handleBack = (event) => {
-            event.preventDefault(); // Prevent default back behavior
-
-            // Display an alert message
-            alert("You cannot go back during the survey.");
-        };
-
-        // Add event listener for popstate
-        window.addEventListener('popstate', handleBack);
-
-        // Cleanup function
-        return () => {
-            window.removeEventListener('popstate', handleBack);
-        };
-    }, [navigate]);
+    // useEffect(() => {
+    //     // Push a new entry into the history stack
+    //     window.history.pushState(null, null, window.location.pathname);
+    //
+    //     // Handle back button or back navigation
+    //     const handleBack = (event) => {
+    //         event.preventDefault(); // Prevent default back behavior
+    //
+    //         // Display an alert message
+    //         alert("You cannot go back during the survey.");
+    //     };
+    //
+    //     // Add event listener for popstate
+    //     window.addEventListener('popstate', handleBack);
+    //
+    //     // Cleanup function
+    //     return () => {
+    //         window.removeEventListener('popstate', handleBack);
+    //     };
+    // }, [navigate]);
 
     const handleInputChange = (event) => {
-        const { name, value } = event.target;
-        setFormData(prevState => ({
-            ...prevState,
-            [name]: value
-        }));
+        if (!isDisabled) {
+            const { name, value } = event.target;
+            setFormData(prevState => ({
+                ...prevState,
+                [name]: value
+            }));
+        }
     };
 
     const isFormComplete = formData.age && formData.gender && formData.education && formData.familiarity && formData.aiExperience && formData.aiTrust;
-
-    const handleDemographicSurveySubmit = async (event) => {
-        event.preventDefault();
-        const demographicData = formData; // Get the demographic data from the form state
-        try {
-            const response = await fetch('http://13.59.246.19/api/submit-demographic', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ userSessionId, demographicData }), // Send userSessionId and demographicData
-            });
-            if (response.ok) {
-                console.log('Demographic data submitted successfully');
-                navigate('/survey-instruction'); // Navigate to the experiment instruction page
-            } else {
-                throw new Error('Failed to submit demographic data');
-            }
-        } catch (error) {
-            console.error("Error submitting demographic data:", error);
+    useEffect(() => {
+        // Automatically save the data when form is complete and not disabled
+        if (isFormComplete && !isDisabled) {
+            onSave(formData);
         }
-    };
+    }, [formData, onSave, isDisabled, isFormComplete]);
+
+    // const handleDemographicSurveySubmit = async (event) => {
+    //     event.preventDefault();
+    //     const demographicData = formData; // Get the demographic data from the form state
+    //     try {
+    //         const response = await fetch('http://13.59.246.19/api/submit-demographic', {
+    //             method: 'POST',
+    //             headers: {
+    //                 'Content-Type': 'application/json',
+    //             },
+    //             body: JSON.stringify({ userSessionId, demographicData }), // Send userSessionId and demographicData
+    //         });
+    //         if (response.ok) {
+    //             console.log('Demographic data submitted successfully');
+    //             navigate('/survey-instruction'); // Navigate to the experiment instruction page
+    //         } else {
+    //             throw new Error('Failed to submit demographic data');
+    //         }
+    //     } catch (error) {
+    //         console.error("Error submitting demographic data:", error);
+    //     }
+    // };
+
+    // const handleDemographicSurveySave = () => {
+    //     if (isFormComplete) {
+    //         onSave(formData); // Pass the formData back to parent component
+    //     }
+    // };
 
     return (
         <div className="demographic-container">
             <div className="demographic-form">
-                <h1>Demographic Survey</h1>
-                <form onSubmit={handleDemographicSurveySubmit}>
+                <h2>Demographic Survey</h2>
+                <form>
                     <div className="form-group">
                         <label>Please select your age.</label>
                         <select name="age" value={formData.age} onChange={handleInputChange}>
@@ -180,7 +192,9 @@ function DemographicSurvey({ userSessionId }) {
                                   onChange={handleInputChange}></textarea>
                     </div>
 
-                    <button type="submit" disabled={!isFormComplete}>Agree and Submit Survey</button>
+                    {/*<button type="button" onClick={handleDemographicSurveySave} disabled={!isFormComplete}>*/}
+                    {/*    Save Demographic Data*/}
+                    {/*</button>*/}
                 </form>
             </div>
         </div>

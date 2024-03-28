@@ -1,9 +1,39 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../assets/ConsentPage.css';
 
-function ConsentPage({ setUserSessionId, group}) {
+function ConsentPage({ userSessionId, group}) {
     const navigate = useNavigate();
+
+    useEffect(() => {
+        // Push a new entry into the history stack
+        window.history.pushState(null, null, window.location.pathname);
+
+        // Handle back button or back navigation
+        const handleBack = (event) => {
+            event.preventDefault(); // Prevent default back behavior
+
+            // Display an alert message
+            alert("You cannot go back during the survey.");
+        };
+
+        const handleBeforeUnload = (event) => {
+            event.preventDefault();
+
+            // Display an alert message
+            alert("You cannot refresh the page during the survey.");
+        };
+
+        // Add event listener for popstate
+        window.addEventListener('popstate', handleBack);
+        window.addEventListener('beforeunload', handleBeforeUnload);
+
+        // Cleanup function
+        return () => {
+            window.removeEventListener('popstate', handleBack);
+            window.removeEventListener('beforeunload', handleBeforeUnload);
+        };
+    }, [navigate]);
 
     const handleConsent = async () => {
         try {
@@ -15,11 +45,13 @@ function ConsentPage({ setUserSessionId, group}) {
             const { ip } = await ipResponse.json();
 
             const consentData = {
+                userSessionId,
                 consentAgreed: true,
                 group,
                 ipAddress: ip, // Include the fetched IP address
             };
 
+            // TODO: 13.59.246.19 or localhost:32774
             const response = await fetch('http://13.59.246.19/api/submit-consent', {
                 method: 'POST',
                 headers: {
@@ -29,9 +61,7 @@ function ConsentPage({ setUserSessionId, group}) {
             });
 
             if (response.ok) {
-                const result = await response.json();
-                setUserSessionId(result.userSessionId); // Set the user session ID in the App component
-                navigate('/color-blind-test'); // Navigate to the color-blind test page
+                navigate('/tell-us-about-you'); // Navigate to the next page after successful consent submission
             } else {
                 throw new Error('Failed to submit consent agreement');
             }

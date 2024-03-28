@@ -9,6 +9,36 @@ function MultipleChoiceQuestions({ questionNumber, userSessionId, imageId }) {
     const [timeLeft, setTimeLeft] = useState(25);
     const [startTime, setStartTime] = useState(Date.now());
 
+    useEffect(() => {
+        // Push a new entry into the history stack
+        window.history.pushState(null, null, window.location.pathname);
+
+        // Handle back button or back navigation
+        const handleBack = (event) => {
+            event.preventDefault(); // Prevent default back behavior
+
+            // Display an alert message
+            alert("You cannot go back during the survey.");
+        };
+
+        const handleBeforeUnload = (event) => {
+            event.preventDefault();
+
+            // Display an alert message
+            alert("You cannot refresh the page during the survey.");
+        };
+
+        // Add event listener for popstate
+        window.addEventListener('popstate', handleBack);
+        window.addEventListener('beforeunload', handleBeforeUnload);
+
+        // Cleanup function
+        return () => {
+            window.removeEventListener('popstate', handleBack);
+            window.removeEventListener('beforeunload', handleBeforeUnload);
+        };
+    }, [navigate]);
+
     const handleNavigationAfterAnswer = useCallback(() => {
         const nextQuestionNumber = questionNumber + 1;
         if (nextQuestionNumber <= mcqData.length) {
@@ -34,6 +64,7 @@ function MultipleChoiceQuestions({ questionNumber, userSessionId, imageId }) {
         };
 
         try {
+            // TODO: 13.59.246.19 or localhost:32774
             const response = await fetch('http://13.59.246.19/api/submit-answer', {
                 method: 'POST',
                 headers: {

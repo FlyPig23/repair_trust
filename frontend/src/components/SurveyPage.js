@@ -79,12 +79,21 @@ function SurveyPage({ iteration, userSessionId, group, imageId }) {
             alert("You cannot go back during the survey.");
         };
 
+        const handleBeforeUnload = (event) => {
+            event.preventDefault();
+
+            // Display an alert message
+            alert("You cannot refresh the page during the survey.");
+        };
+
         // Add event listener for popstate
         window.addEventListener('popstate', handleBack);
+        window.addEventListener('beforeunload', handleBeforeUnload);
 
         // Cleanup function
         return () => {
             window.removeEventListener('popstate', handleBack);
+            window.removeEventListener('beforeunload', handleBeforeUnload);
         };
     }, [navigate]);
 
@@ -129,6 +138,7 @@ function SurveyPage({ iteration, userSessionId, group, imageId }) {
 
         try {
             // Submit survey data
+            // TODO: 13.59.246.19 or localhost:32774
             const response = await fetch('http://13.59.246.19/api/submit-survey', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
@@ -153,9 +163,12 @@ function SurveyPage({ iteration, userSessionId, group, imageId }) {
 
     return (
         <div className="app-container">
+            <div className="survey-header">
+                <h2>Task {iteration} of 15</h2>
+            </div>
             <div className="left-panel">
                 {/* Pass imageUrl and title from imageData directly */}
-                <DataVisualization imageUrl={imageData?.image} title={imageData?.title} />
+                <DataVisualization imageUrl={imageData?.image} title={imageData?.title}/>
             </div>
             <div className="right-panel">
                 <GptResponse

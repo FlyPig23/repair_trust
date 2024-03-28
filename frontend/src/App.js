@@ -9,15 +9,18 @@ import './assets/ConsentPage.css';
 import SurveyPage from './components/SurveyPage';
 import ConsentPage from './components/ConsentPage';
 import MCQPage from './components/MCQPage';
-import DemographicSurvey from './components/DemographicSurvey';
 import SurveyInstruction from './components/SurveyInstruction';
 import MCQInstruction from './components/MCQInstruction';
 import CheckPage from './components/CheckPage';
 import ThankYouPage from './components/ThankYouPage';
-import ColorBlindTest from './components/ColorBlindTest';
+import EnterIdPage from "./components/EnterIdPage";
+import TellUsAboutYouPage from "./components/TellUsAboutYouPage";
+import DemoPage1 from './components/DemoPage1';
+import DemoPage2 from './components/DemoPage2';
+import RestPage from './components/RestPage';
 
 function App() {
-    const [userSessionId, setUserSessionId] = useState(null);
+    const [userSessionId, setUserSessionId] = useState(() => sessionStorage.getItem('userSessionId'));
     const [group, setGroup] = useState('');
     const [surveyOrderArray, setSurveyOrderArray] = useState([]);
     const [mcqOrderArray, setMcqOrderArray] = useState([]);
@@ -56,16 +59,23 @@ function App() {
         generateRandomMCQOrderArray();
     }, []);
 
+    // When userSessionId changes, update it in sessionStorage
+    useEffect(() => {
+        if (userSessionId) {
+            sessionStorage.setItem('userSessionId', userSessionId);
+        }
+    }, [userSessionId]);
+
     return (
         <Router>
             <Routes>
-                <Route path="/" element={<ConsentPage setUserSessionId={setUserSessionId} group={group} />} />
-                <Route path="/color-blind-test" element={<ColorBlindTest setUserSessionId={setUserSessionId} />} />
-                <Route path="/demographic-survey" element={<DemographicSurvey userSessionId={userSessionId} />} />
+                <Route path="/" element={<EnterIdPage setUserSessionId={setUserSessionId} />} />
+                <Route path="/consent" element={<ConsentPage userSessionId={userSessionId} group={group} />} />
+                <Route path="/tell-us-about-you" element={<TellUsAboutYouPage userSessionId={userSessionId} />} />
                 <Route path="/survey-instruction" element={<SurveyInstruction />} />
+                <Route path="/page-demo/1" element={<DemoPage1 />} />
+                <Route path="/page-demo/2" element={<DemoPage2 />} />
 
-                {/* Check page before Pre batch */}
-                <Route path="/check-1" element={<CheckPage batch="Pre" userSessionId={userSessionId} />} />
                 {[...Array(5)].map((_, index) => (
                     <Route
                         key={`pre-${index}`}
@@ -77,6 +87,7 @@ function App() {
                             imageId={surveyOrderArray[index]} />}
                     />
                 ))}
+                <Route path="/rest-1" element={<RestPage batch="first" />} />
 
                 {/* Check page before Destroy batch */}
                 <Route path="/check-2" element={<CheckPage batch="Destroy" userSessionId={userSessionId} />} />
@@ -92,6 +103,7 @@ function App() {
                         />}
                     />
                 ))}
+                <Route path="/rest-2" element={<RestPage batch="second" />} />
 
                 {/* Check page before Repair batch */}
                 <Route path="/check-3" element={<CheckPage batch="Repair" userSessionId={userSessionId} />} />
@@ -107,8 +119,8 @@ function App() {
                         />}
                     />
                 ))}
-
                 <Route path="/check-4" element={<CheckPage batch="Post" userSessionId={userSessionId} />} />
+                <Route path="/rest-3" element={<RestPage batch="third" />} />
 
                 <Route path="/mcq-instruction" element={<MCQInstruction />} />
                 {[...Array(12)].map((_, index) => (

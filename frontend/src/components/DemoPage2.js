@@ -1,9 +1,9 @@
-import React, { useEffect } from 'react';
-import MCQVisualization from './MCQVisualization';
-import MultipleChoiceQuestions from './MultipleChoiceQuestions';
+import React, {useEffect} from 'react';
 import { useNavigate } from 'react-router-dom';
+import rateGuide from '../assets/images/rate_guide.png';
+import '../assets/DemoPage.css';
 
-function MCQPage({ iteration, userSessionId, imageId }) {
+function DemoPage2() {
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -36,20 +36,21 @@ function MCQPage({ iteration, userSessionId, imageId }) {
         };
     }, [navigate]);
 
+    const handleNavigate = () => {
+        navigate('/survey/1/1');
+    };
+
     return (
-        <div className="app-container">
-            <div className="left-panel">
-                <MCQVisualization iteration={iteration} imageId={imageId} />
+        <div className="image-container">
+            <h1>Instruction for the Rating Page</h1>
+            <p>Here is an example of the rating page you will see.</p>
+            <div>
+                <img src={rateGuide} alt="Rate Guide Example"/>
+                <p className="image-description">Instructions on how to rate the trust level.</p>
             </div>
-            <div className="right-panel">
-                <MultipleChoiceQuestions
-                    questionNumber={iteration}
-                    userSessionId={userSessionId}
-                    imageId={imageId}
-                />
-            </div>
+            <button onClick={handleNavigate}>Next</button>
         </div>
     );
 }
 
-export default MCQPage;
+export default DemoPage2;

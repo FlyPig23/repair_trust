@@ -8,6 +8,23 @@ function ActionButtons({ onUseGpt, onEditGpt, onWriteOwn, handleSubmitSurvey, it
     // Check if all ratings are given and an action is selected
     const isNextButtonEnabled = Object.values(ratings).every(rating => rating != null) && actionChoice;
 
+    function determineNextPath(currentIteration) {
+        if (currentIteration % 5 === 0) {
+            if (currentIteration === 15) {
+                // Special case for the end of the last batch
+                return '/check-4';
+            } else {
+                // Navigate to rest page after each batch except the last
+                return `/rest-${currentIteration / 5}`;
+            }
+        } else {
+            // Normal navigation within a batch
+            let batch = Math.ceil(currentIteration / 5);
+            let nextInBatch = currentIteration % 5 + 1;
+            return `/survey/${batch}/${nextInBatch}`;
+        }
+    }
+
     // Function to handle the submission and navigation to the next survey page
     const handleNext = async () => {
         // // Get the current survey number from the URL
@@ -21,20 +38,7 @@ function ActionButtons({ onUseGpt, onEditGpt, onWriteOwn, handleSubmitSurvey, it
 
         await handleSubmitSurvey(iteration);
 
-        let nextPath;
-        if (iteration % 5 === 0) { // End of a batch
-            const nextCheckPage = iteration / 5 + 1;
-            nextPath = `/check-${nextCheckPage}`;
-        } else {
-            const batch = Math.floor((iteration - 1) / 5) + 1;
-            const nextInBatch = (iteration - 1) % 5 + 2; // Calculate next iteration within the current batch
-            nextPath = `/survey/${batch}/${nextInBatch}`;
-        }
-
-        // Special case for the last iteration of the last batch
-        if (iteration === 15) {
-            nextPath = '/check-4';
-        }
+        let nextPath = determineNextPath(iteration);
 
         navigate(nextPath);
     };

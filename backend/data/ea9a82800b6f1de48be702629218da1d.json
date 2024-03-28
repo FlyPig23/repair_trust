@@ -1,0 +1,345 @@
+{
+  "userSessionId": "ea9a82800b6f1de48be702629218da1d",
+  "prolificId": "3214",
+  "consent": {
+    "consentAgreed": true,
+    "group": "cbc",
+    "ipAddress": "99.46.206.77"
+  },
+  "aboutYou": [
+    {
+      "demographicData": {
+        "age": "20",
+        "gender": "male",
+        "education": "Associate Degree",
+        "familiarity": "not_familiar",
+        "aiExperience": "somewhat",
+        "aiTrust": "somewhat_trust",
+        "employmentStatus": "Unemployed",
+        "industryRelated": "no",
+        "comments": ""
+      },
+      "preCheckRatings": {
+        "quality": 3,
+        "factual": 3,
+        "trust": 3
+      },
+      "colorBlindResult": "7,6"
+    }
+  ],
+  "checkPageRatings": [
+    {
+      "batch": "Destroy",
+      "ratings": {
+        "quality": 5,
+        "factual": 5,
+        "trust": 5
+      },
+      "repairType": ""
+    },
+    {
+      "batch": "Repair",
+      "ratings": {
+        "quality": 3,
+        "factual": 3,
+        "trust": 3
+      },
+      "repairType": "ability"
+    },
+    {
+      "batch": "Post",
+      "ratings": {
+        "quality": 5,
+        "factual": 5,
+        "trust": 5
+      },
+      "repairType": ""
+    }
+  ],
+  "surveys": [
+    {
+      "surveyNumber": 1,
+      "imageIndex": 4,
+      "gptResponse": "The provided image is a line graph that shows the change in total market value since October 12, 2022, for three different entities: the 'Magnificent Seven' technology stocks (which includes Alphabet, Amazon, Apple, Meta, Microsoft, Nvidia, Tesla), the S&P 500 index, and the remaining 493 companies in the S&P 500. The 'Magnificent Seven' are represented by an orange line, which shows a significant increase in market value, peaking at around 70% above the October 12 level. The S&P 500 index, shown in light blue, displays more moderate growth, while the market value of the remaining 493 companies, illustrated with a dark blue line, shows the least growth. The data is sourced from FactSet and is as of market close on January 19.",
+      "ratings": {
+        "quality": 5,
+        "factual": 5,
+        "trust": 5,
+        "attentionCheck": 5
+      },
+      "attentionCheckLevel": 5,
+      "actionChoice": "Use GPT Response",
+      "timeSpent": 16549
+    },
+    {
+      "surveyNumber": 2,
+      "imageIndex": 8,
+      "gptResponse": "The image is a graphical representation of the total delegates allocated to political candidates. Kimberly Black leads with 63 delegates, followed by Fiona Springer with 17. Warren Turner and John Arnold, who have dropped out of the race, have 9 and 3 delegates respectively. The graphic indicates that a total of 1,215 delegates are needed to win the nomination. The bar lengths visually correspond to the number of delegates each candidate has secured. The 92 delegates allocated so far are part of the overall count required to secure the nomination.",
+      "ratings": {
+        "quality": 5,
+        "factual": 5,
+        "trust": 5,
+        "attentionCheck": 5
+      },
+      "attentionCheckLevel": 5,
+      "actionChoice": "Use GPT Response",
+      "timeSpent": 13377
+    },
+    {
+      "surveyNumber": 3,
+      "imageIndex": 3,
+      "gptResponse": "The image shows a line graph comparing the rates of drug overdose deaths per 100,000 residents between San Francisco and the United States over time, from 2010 to 2023. Two lines are plotted: a sharp, rising line for San Francisco, and a more gradual rising line for the United States. The data illustrates that while both rates have increased, San Francisco's rate has surged dramatically, especially from around 2018, far outpacing the national average. The 12-month rolling averages are shown, and it is noted that the drug death numbers for 2023 are provisional. The source of the data is the CDC.",
+      "ratings": {
+        "quality": 5,
+        "factual": 5,
+        "trust": 5,
+        "attentionCheck": 3
+      },
+      "attentionCheckLevel": 3,
+      "actionChoice": "Use GPT Response",
+      "timeSpent": 9157
+    },
+    {
+      "surveyNumber": 4,
+      "imageIndex": 12,
+      "gptResponse": "The image depicts a choropleth map of the United States, showing the temperature deviations from October 1 through March 31, compared with the 2008-2022 average for the same period. Areas in blue are cooler than average, with variations up to -6 degrees Fahrenheit, while areas in orange are warmer, showing increases up to +6 degrees Fahrenheit. The map indicates that most of the western US has been cooler than average, while the eastern part is predominantly warmer. Data is sourced from the PRISM Climate Group at Oregon State University and accessed via Climate Engine. The map notes that data for Alaska and Hawaii is not available.",
+      "ratings": {
+        "quality": 5,
+        "factual": 5,
+        "trust": 5,
+        "attentionCheck": 4
+      },
+      "attentionCheckLevel": 4,
+      "actionChoice": "Use GPT Response",
+      "timeSpent": 8729
+    },
+    {
+      "surveyNumber": 5,
+      "imageIndex": 10,
+      "gptResponse": "The image is a graphical representation of the biggest domestic weekend box office grosses, not adjusted for inflation. It showcases the top-grossing movies on their opening weekend and their respective earnings and share of the weekend's total box office. 'Avengers: Endgame' from April 26-28, 2019, has the highest earnings with $357 million, accounting for 89 percent of that weekend's total. 'Barbie' from July 21-23, 2023, is notable with $162 million, taking 52 percent of the weekend total. The data is sourced from Box Office Mojo.",
+      "ratings": {
+        "quality": 5,
+        "factual": 5,
+        "trust": 5,
+        "attentionCheck": 4
+      },
+      "attentionCheckLevel": 4,
+      "actionChoice": "Use GPT Response",
+      "timeSpent": 8460
+    },
+    {
+      "surveyNumber": 6,
+      "imageIndex": 8,
+      "gptResponse": "Test...",
+      "ratings": {
+        "quality": 2,
+        "factual": 2,
+        "trust": 2,
+        "attentionCheck": 2
+      },
+      "attentionCheckLevel": 2,
+      "actionChoice": "Write My Own Response",
+      "timeSpent": 14305
+    },
+    {
+      "surveyNumber": 7,
+      "imageIndex": 4,
+      "gptResponse": "Test Edit......The image depicts a line graph detailing the percentage growth in sales for the 'Magnificent Seven' technology companies, the S&P 500 index, and the remaining companies within the S&P 500 since October 12, 2022. The orange line suggests a drastic increase in sales by about 10%. The S&P 500 and the remaining companies appear to show a change in their sales figures as well.",
+      "ratings": {
+        "quality": 2,
+        "factual": 2,
+        "trust": 2,
+        "attentionCheck": 4
+      },
+      "attentionCheckLevel": 4,
+      "actionChoice": "Edit GPT Response",
+      "timeSpent": 15475
+    },
+    {
+      "surveyNumber": 8,
+      "imageIndex": 7,
+      "gptResponse": "Test",
+      "ratings": {
+        "quality": 1,
+        "factual": 1,
+        "trust": 1,
+        "attentionCheck": 1
+      },
+      "attentionCheckLevel": 1,
+      "actionChoice": "Write My Own Response",
+      "timeSpent": 14815
+    },
+    {
+      "surveyNumber": 9,
+      "imageIndex": 6,
+      "gptResponse": "Test...",
+      "ratings": {
+        "quality": 1,
+        "factual": 1,
+        "trust": 1,
+        "attentionCheck": 5
+      },
+      "attentionCheckLevel": 5,
+      "actionChoice": "Write My Own Response",
+      "timeSpent": 8009
+    },
+    {
+      "surveyNumber": 10,
+      "imageIndex": 15,
+      "gptResponse": "Test.",
+      "ratings": {
+        "quality": 1,
+        "factual": 1,
+        "trust": 1,
+        "attentionCheck": 3
+      },
+      "attentionCheckLevel": 3,
+      "actionChoice": "Write My Own Response",
+      "timeSpent": 13764
+    },
+    {
+      "surveyNumber": 11,
+      "imageIndex": 14,
+      "gptResponse": "The image is a line graph that traces the career point totals of the top 250 scorers in NBA history. It shows the cumulative points over time, with LeBron James recently surpassing Kareem Abdul-Jabbar's record, setting a new high. Current players are highlighted in blue, with LeBron James leading at 38,390 points as of 2023. Historical players like Wilt Chamberlain, Karl Malone, and Michael Jordan are also included, with their final career totals marked. The source of the data is Basketball-reference.com, and the data is up to February 7.",
+      "ratings": {
+        "quality": 5,
+        "factual": 5,
+        "trust": 5,
+        "attentionCheck": 1
+      },
+      "attentionCheckLevel": 1,
+      "actionChoice": "Use GPT Response",
+      "timeSpent": 12875
+    },
+    {
+      "surveyNumber": 12,
+      "imageIndex": 10,
+      "gptResponse": "The image is a graphical representation of the biggest domestic weekend box office grosses, not adjusted for inflation. It showcases the top-grossing movies on their opening weekend and their respective earnings and share of the weekend's total box office. 'Avengers: Endgame' from April 26-28, 2019, has the highest earnings with $357 million, accounting for 89 percent of that weekend's total. 'Barbie' from July 21-23, 2023, is notable with $162 million, taking 52 percent of the weekend total. The data is sourced from Box Office Mojo.",
+      "ratings": {
+        "quality": 5,
+        "factual": 5,
+        "trust": 5,
+        "attentionCheck": 3
+      },
+      "attentionCheckLevel": 3,
+      "actionChoice": "Use GPT Response",
+      "timeSpent": 5052
+    },
+    {
+      "surveyNumber": 13,
+      "imageIndex": 8,
+      "gptResponse": "The image is a graphical representation of the total delegates allocated to political candidates. Kimberly Black leads with 63 delegates, followed by Fiona Springer with 17. Warren Turner and John Arnold, who have dropped out of the race, have 9 and 3 delegates respectively. The graphic indicates that a total of 1,215 delegates are needed to win the nomination. The bar lengths visually correspond to the number of delegates each candidate has secured. The 92 delegates allocated so far are part of the overall count required to secure the nomination.",
+      "ratings": {
+        "quality": 5,
+        "factual": 5,
+        "trust": 5,
+        "attentionCheck": 3
+      },
+      "attentionCheckLevel": 3,
+      "actionChoice": "Use GPT Response",
+      "timeSpent": 5329
+    },
+    {
+      "surveyNumber": 14,
+      "imageIndex": 6,
+      "gptResponse": "The image is a horizontal bar chart displaying the age demographics of individuals facing eviction. The chart compares the share of all renters with the share of those facing eviction, indicating that young children (0-4 years old) make up a larger proportion of those facing eviction (12%) compared to their share among all renters (9%). The data, covering 2007-2016, is sourced from a comprehensive demographic profile by researchers at Princeton, Rutgers, and the U.S. Census Bureau.",
+      "ratings": {
+        "quality": 5,
+        "factual": 5,
+        "trust": 5,
+        "attentionCheck": 2
+      },
+      "attentionCheckLevel": 2,
+      "actionChoice": "Use GPT Response",
+      "timeSpent": 5090
+    },
+    {
+      "surveyNumber": 15,
+      "imageIndex": 1,
+      "gptResponse": "The image is a world map highlighting the projected change in the number of working-age people from 2023 to 2050. Working-age is defined as individuals aged 15 to 64. The data is sourced from the U.N. World Population Prospects 2022. Countries are represented by circles whose size indicates the magnitude of change. Green circles denote an increase, while orange circles represent a decrease. Significant changes include India with an increase of 147 million, Nigeria with 114 million, and Pakistan with 100 million. In contrast, China shows a massive decrease of 216 million, with Russia and Japan also experiencing declines of 16 million and 19 million, respectively.",
+      "ratings": {
+        "quality": 5,
+        "factual": 5,
+        "trust": 5,
+        "attentionCheck": 1
+      },
+      "attentionCheckLevel": 1,
+      "actionChoice": "Use GPT Response",
+      "timeSpent": 4480
+    }
+  ],
+  "mcqAnswers": [
+    {
+      "questionText": "What distance have customers traveled in the taxi the most?",
+      "choice": "30 - 40 KM",
+      "isCorrect": true,
+      "responseTime": 3140
+    },
+    {
+      "questionText": "What is the approximate global smartphone market share of Samsung?",
+      "choice": "25.3%",
+      "isCorrect": false,
+      "responseTime": 485
+    },
+    {
+      "questionText": "Which city's metro system has the largest number of stations?",
+      "choice": "Shanghai",
+      "isCorrect": true,
+      "responseTime": 393
+    },
+    {
+      "questionText": "What was the average price of pound of coffee beans in October 2019?",
+      "choice": "$0.80",
+      "isCorrect": false,
+      "responseTime": 807
+    },
+    {
+      "questionText": "What was the price of a barrel of oil in February 2020?",
+      "choice": "$28.67",
+      "isCorrect": false,
+      "responseTime": 541
+    },
+    {
+      "questionText": "In 2020, the unemployment rate for Washington (WA) was higher than that of Wisconsin (WI).",
+      "choice": "True",
+      "isCorrect": true,
+      "responseTime": 672
+    },
+    {
+      "questionText": "There is a negative linear relationship between the height and the weight of the 85 males.",
+      "choice": "False",
+      "isCorrect": true,
+      "responseTime": 543
+    },
+    {
+      "questionText": "What is the average internet speed in Japan?",
+      "choice": "42.30 Mbps",
+      "isCorrect": false,
+      "responseTime": 540
+    },
+    {
+      "questionText": "What was the ratio of girls named 'Isla' to girls named 'Amelia' in 2012 in the UK?",
+      "choice": "1 to 2",
+      "isCorrect": true,
+      "responseTime": 727
+    },
+    {
+      "questionText": "eBay is nested in the Software category.",
+      "choice": "False",
+      "isCorrect": true,
+      "responseTime": 773
+    },
+    {
+      "questionText": "Which country has the lowest proportion of Gold medals?",
+      "choice": "Great Britain",
+      "isCorrect": true,
+      "responseTime": 942
+    },
+    {
+      "questionText": "What is the cost of peanuts in Seoul?",
+      "choice": "$5.2",
+      "isCorrect": false,
+      "responseTime": 471
+    }
+  ]
+}

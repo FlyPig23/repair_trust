@@ -1,18 +1,24 @@
 .demographic-container {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    height: 100vh;
+    justify-content: flex-start; /* Start items at the top */
+    height: 700px; /* Adjusted for viewport height */
+    padding: 10px 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    width: 95%;
+    overflow: auto; /* Add scrollbars when content overflows */
+    margin: 10px 0 10px 0;
 }
 
 .demographic-form {
-    width: 50%; /* Adjust width as needed */
+    width: 100%; /* Adjust width as needed */
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.demographic-form h1 {
+.demographic-form h2 {
     text-align: center;
     color: #007bff; /* iOS blue for headers */
 }
@@ -32,31 +38,31 @@
     border-radius: 5px;
 }
 
-.demographic-form form button {
-    padding: 12px 24px; /* Larger padding for a more clickable area */
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 15px; /* More rounded corners for buttons */
-    cursor: pointer;
-    font-size: 18px; /* Larger font size */
-    transition: background-color 0.3s;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow for the button */
-    display: block; /* Make the button a block-level element */
-    width: fit-content; /* Fit the content width */
-    margin: 20px auto; /* Auto margins for left and right to center the button */
-}
+/*.demographic-form form button {*/
+/*    padding: 12px 24px; !* Larger padding for a more clickable area *!*/
+/*    background-color: #007bff;*/
+/*    color: white;*/
+/*    border: none;*/
+/*    border-radius: 15px; !* More rounded corners for buttons *!*/
+/*    cursor: pointer;*/
+/*    font-size: 18px; !* Larger font size *!*/
+/*    transition: background-color 0.3s;*/
+/*    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); !* Subtle shadow for the button *!*/
+/*    display: block; !* Make the button a block-level element *!*/
+/*    width: fit-content; !* Fit the content width *!*/
+/*    margin: 20px auto; !* Auto margins for left and right to center the button *!*/
+/*}*/
 
-.demographic-form form button:hover {
-    background-color: #0056b3;
-}
+/*.demographic-form form button:hover {*/
+/*    background-color: #0056b3;*/
+/*}*/
 
-.demographic-form form button:disabled {
-    background-color: #cccccc; /* Grey background for disabled state */
-    color: #666666; /* Darker text color for disabled state */
-    cursor: not-allowed; /* Change cursor for disabled state */
-    opacity: 0.7; /* Greyed out appearance */
-}
+/*.demographic-form form button:disabled {*/
+/*    background-color: #cccccc; !* Grey background for disabled state *!*/
+/*    color: #666666; !* Darker text color for disabled state *!*/
+/*    cursor: not-allowed; !* Change cursor for disabled state *!*/
+/*    opacity: 0.7; !* Greyed out appearance *!*/
+/*}*/
 
 /* Additional CSS to ensure textarea is on a new line */
 .demographic-form form .form-group label + textarea {

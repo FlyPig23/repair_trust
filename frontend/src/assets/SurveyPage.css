@@ -1,7 +1,25 @@
 .app-container {
+    position: relative;
     display: flex;
     justify-content: space-between;
     padding: 20px;
+}
+
+.survey-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 20px;
+    background-color: white;
+    border-bottom-right-radius: 8px; /* Optional: rounded corner */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: add shadow for depth */
+    z-index: 10; /* Ensure it's above other content */
+    width: 10vw;
+    height: 2vh;
+}
+
+.survey-header h2 {
+    font-size: 1.5vw;
 }
 
 .left-panel {

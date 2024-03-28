@@ -213,22 +213,59 @@ function readUserData(userSessionId) {
     return null; // Or handle as needed
 }
 
+apiRouter.post('/submit-id', (req, res) => {
+    const { prolificId } = req.body;
+    const userSessionId = crypto.randomBytes(16).toString('hex');
+    const userData = {
+        userSessionId,
+        prolificId,
+        consent: {},
+        aboutYou: [],
+        checkPageRatings: [],
+        surveys: [],
+        mcqAnswers: [],
+    };
+    saveUserData(userSessionId, userData);
+    res.json({ message: "Prolific ID saved successfully and session initialized", userSessionId });
+});
+
 apiRouter.post('/submit-consent', async (req, res) => {
     try {
-        const userSessionId = crypto.randomBytes(16).toString('hex');
-        const userData = {
-            userSessionId,
-            consent: req.body,
-            demographicData: [],
-            checkPageRatings: [],
-            surveys: [],
-            mcqAnswers: [],
-        };
+        const { userSessionId, consentAgreed, group, ipAddress } = req.body;
+        const userData = readUserData(userSessionId);
+        userData.consent = { consentAgreed, group, ipAddress };
         saveUserData(userSessionId, userData);
         res.json({ message: "Consent saved successfully", userSessionId });
     } catch (error) {
         console.error(error);
         res.status(500).send("Error saving consent");
+    }
+});
+
+// Add the new endpoint
+apiRouter.post('/submit-about-you', async (req, res) => {
+    try {
+        const { userSessionId, demographicData, preCheckRatings, colorBlindResult } = req.body;
+
+        // Read existing data
+        const userData = readUserData(userSessionId);
+
+        const aboutYouData = {
+            demographicData,
+            preCheckRatings,
+            colorBlindResult
+        };
+
+        // Append to the aboutYou array
+        userData.aboutYou.push(aboutYouData);
+
+        // Save updated data
+        saveUserData(userSessionId, userData);
+
+        res.json({ message: "Data from 'Tell Us About You' page saved successfully", userSessionId });
+    } catch (error) {
+        console.error(error);
+        res.status(500).send("Error saving 'Tell Us About You' page data");
     }
 });
 

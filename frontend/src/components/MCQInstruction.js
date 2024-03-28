@@ -17,12 +17,21 @@ function MCQInstruction() {
             alert("You cannot go back during the survey.");
         };
 
+        const handleBeforeUnload = (event) => {
+            event.preventDefault();
+
+            // Display an alert message
+            alert("You cannot refresh the page during the survey.");
+        };
+
         // Add event listener for popstate
         window.addEventListener('popstate', handleBack);
+        window.addEventListener('beforeunload', handleBeforeUnload);
 
         // Cleanup function
         return () => {
             window.removeEventListener('popstate', handleBack);
+            window.removeEventListener('beforeunload', handleBeforeUnload);
         };
     }, [navigate]);
 
