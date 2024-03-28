@@ -90,8 +90,8 @@ function CheckPage({ batch, userSessionId }) {
 
         // Before navigating, submit the ratings to the backend
         try {
-            // TODO: 13.59.246.19
-            const response = await fetch('http://localhost:32774/api/submit-checkpage', {
+            // TODO: 13.59.246.19 or localhost:32774
+            const response = await fetch('http://13.59.246.19/api/submit-checkpage', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
