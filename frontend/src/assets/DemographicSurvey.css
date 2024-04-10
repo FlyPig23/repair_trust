@@ -3,7 +3,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: flex-start; /* Start items at the top */
-    height: 700px; /* Adjusted for viewport height */
+    height: 800px; /* Adjusted for viewport height */
     padding: 10px 20px;
     background-color: #fff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);

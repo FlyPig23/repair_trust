@@ -13,6 +13,7 @@ function DemographicSurvey({ onSave, isDisabled }) {
         aiTrust: '',
         employmentStatus: '',
         industryRelated: '',
+        journalismExperience: '',
         comments: ''
     });
 
@@ -31,6 +32,14 @@ function DemographicSurvey({ onSave, isDisabled }) {
         'Unemployed',
         'Retired',
         'Prefer not to say'
+    ];
+
+    const journalismExperiences = [
+        'Less than 1 year',
+        '1-3 years',
+        '4-6 years',
+        '7-10 years',
+        'More than 10 years'
     ];
 
     // useEffect(() => {
@@ -64,7 +73,7 @@ function DemographicSurvey({ onSave, isDisabled }) {
         }
     };
 
-    const isFormComplete = formData.age && formData.gender && formData.education && formData.familiarity && formData.aiExperience && formData.aiTrust;
+    const isFormComplete = formData.age && formData.gender && formData.education && formData.familiarity && formData.aiExperience && formData.aiTrust && formData.employmentStatus && formData.industryRelated && formData.journalismExperience;
     useEffect(() => {
         // Automatically save the data when form is complete and not disabled
         if (isFormComplete && !isDisabled) {
@@ -147,7 +156,19 @@ function DemographicSurvey({ onSave, isDisabled }) {
                     </div>
 
                     <div className="form-group">
-                        <label>Is your current work or field of study related to data analysis, visualization, or artificial intelligence?</label>
+                        <label>How long have you been a journalist?</label>
+                        <select name="journalismExperience" value={formData.journalismExperience}
+                                onChange={handleInputChange}>
+                            <option value="" disabled>Select your journalism experience</option>
+                            {journalismExperiences.map(experience => (
+                                <option key={experience} value={experience}>{experience}</option>
+                            ))}
+                        </select>
+                    </div>
+
+                    <div className="form-group">
+                        <label>Is your current work or field of study related to data analysis, visualization, or
+                            artificial intelligence?</label>
                         <select name="industryRelated" value={formData.industryRelated} onChange={handleInputChange}>
                             <option value="" disabled>Select an option</option>
                             <option value="yes">Yes</option>

@@ -19,6 +19,7 @@ function TellUsAboutYouPage({ userSessionId }) {
         aiTrust: '',
         employmentStatus: '',
         industryRelated: '',
+        journalismExperience: '',
         comments: ''
     });
     const [preCheckRatings, setPreCheckRatings] = useState({
