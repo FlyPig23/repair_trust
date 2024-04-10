@@ -157,8 +157,7 @@ function DemographicSurvey({ onSave, isDisabled }) {
 
                     <div className="form-group">
                         <label>How long have you been a journalist?</label>
-                        <select name="journalismExperience" value={formData.journalismExperience}
-                                onChange={handleInputChange}>
+                        <select name="journalismExperience" value={formData.journalismExperience} onChange={handleInputChange}>
                             <option value="" disabled>Select your journalism experience</option>
                             {journalismExperiences.map(experience => (
                                 <option key={experience} value={experience}>{experience}</option>
